@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SiteCrafter - Luxury Websites</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">SiteCrafter</div>
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-toggle" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO / CURTAIN ===== -->
+  <section class="hero curtain-section">
+    <div class="curtain" id="curtain"></div>
+    <div class="container curtain-content">
+      <div class="hero-left">
+        <h1 class="hero-title">Luxury Websites Built for Your Brand</h1>
+        <p class="hero-lead">We craft custom websites that are fast, secure, and leave a lasting impression.</p>
+        <div class="hero-cta">
+          <a href="#services" class="btn btn-primary">Our Services</a>
+          <a href="portfolio.html" class="btn btn-outline">See Portfolio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES HIGHLIGHTS ===== -->
+  <section class="curtain-section" id="services" style="background:#1a0000; padding:80px 0;">
+    <div class="container curtain-content">
+      <h2 class="section-title" style="text-align:center; margin-bottom:50px;">Our Services</h2>
+      <div class="services-grid" style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center;">
+        <div class="service" style="flex:1 1 250px; max-width:300px; transition:all 0.3s ease; cursor:pointer;"
+             onmouseover="this.style.transform='scale(1.08)'; this.style.boxShadow='0 0 30px rgba(230,57,70,0.7)';"
+             onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0 15px rgba(230,57,70,0.4)';">
+          <h4>Custom Designs</h4>
+          <p>No templates, only websites built specifically for your brand. Each design is unique.</p>
+        </div>
+
+        <div class="service" style="flex:1 1 250px; max-width:300px; transition:all 0.3s ease; cursor:pointer;"
+             onmouseover="this.style.transform='scale(1.08)'; this.style.boxShadow='0 0 30px rgba(230,57,70,0.7)';"
+             onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0 15px rgba(230,57,70,0.4)';">
+          <h4>SEO & Performance</h4>
+          <p>Websites that are fast, secure, and easy to find on search engines — optimized for your success.</p>
+        </div>
+
+        <div class="service" style="flex:1 1 250px; max-width:300px; transition:all 0.3s ease; cursor:pointer;"
+             onmouseover="this.style.transform='scale(1.08)'; this.style.boxShadow='0 0 30px rgba(230,57,70,0.7)';"
+             onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0 15px rgba(230,57,70,0.4)';">
+          <h4>Ongoing Support</h4>
+          <p>We’re here to help even after your website goes live. Updates, fixes, and guidance whenever you need.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> SiteCrafter. All rights reserved.</p>
+  </footer>
+
+  <!-- ===== MAIN JS ===== -->
+  <script src="assets/main.js"></script>
+</body>
+</html>

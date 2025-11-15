@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - SiteCrafter</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">SiteCrafter</div>
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-toggle" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO / CURTAIN ===== -->
+  <section class="hero curtain-section">
+    <div class="curtain" id="curtain"></div>
+    <div class="container curtain-content" style="text-align:center;">
+      <h1 class="hero-title">Get in Touch</h1>
+      <p class="hero-lead">We’d love to hear from you — let’s craft something amazing together.</p>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT INFO & FORM ===== -->
+  <section class="curtain-section">
+    <div class="container curtain-content">
+      <h2 class="section-title">Contact Us</h2>
+      <p class="section-lead">Reach out to us directly via phone, WhatsApp, email, or send us a message below.</p>
+
+      <!-- ===== CONTACT METHODS ===== -->
+      <div class="contact-info" style="margin-bottom:40px; display:flex; flex-wrap:wrap; gap:20px;">
+        <a href="tel:+27636704430" class="btn btn-outline" style="flex:1; min-width:200px; text-align:center;">📞 Call Us: 063 670 4430</a>
+        <a href="https://wa.me/27636704430" target="_blank" class="btn btn-outline" style="flex:1; min-width:200px; text-align:center;">💬 WhatsApp</a>
+        <a href="mailto:dstercorreia@gmail.com" class="btn btn-outline" style="flex:1; min-width:200px; text-align:center;">✉️ Email: dstercorreia@gmail.com</a>
+      </div>
+
+      <!-- ===== CONTACT FORM ===== -->
+      <form id="contactForm" class="contact-form" style="max-width:600px; margin:0 auto; background:#111; border:2px solid #e63946; padding:30px; border-radius:12px; box-shadow:0 0 20px rgba(230,57,70,0.5);">
+        <input type="text" name="name" placeholder="Your Name" required style="margin-bottom:15px;">
+        <input type="email" name="email" placeholder="Your Email" required style="margin-bottom:15px;">
+        <textarea name="message" rows="6" placeholder="Your Message" required style="margin-bottom:15px;"></textarea>
+        <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> SiteCrafter. All rights reserved.</p>
+  </footer>
+
+  <!-- ===== MAIN JS ===== -->
+  <script src="assets/main.js"></script>
+</body>
+</html>
