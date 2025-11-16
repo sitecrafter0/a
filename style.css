@@ -79,25 +79,27 @@ body {
 /* ===== HERO ===== */
 .hero {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 120px 0 60px;
-  min-height: 80vh;
+  justify-content: flex-start; /* aligns content to top */
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 100px 0 60px;
+  min-height: auto; /* allows height to shrink to content */
   position: relative;
 }
 
 .hero-left {
-  max-width: 50%;
+  max-width: 100%;
+  width: 100%;
 }
 
 .hero-title {
   font-size: 3rem;
   color: #e63946;
   margin-bottom: 20px;
-  white-space: normal;        /* wrap text */
-  word-wrap: break-word;
+  line-height: 1.2;
+  white-space: pre-wrap; /* wrap text automatically */
+  word-break: break-word; /* break long words if needed */
   overflow-wrap: break-word;
-  display: inline-block;      /* keeps cursor inline */
 }
 
 .hero-title.typing::after {
@@ -106,8 +108,8 @@ body {
 }
 
 @keyframes blink {
-  0%,50%,100% { opacity: 1; }
-  25%,75% { opacity: 0; }
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
 }
 
 .hero-lead {
@@ -398,15 +400,20 @@ body {
 /* ===== RESPONSIVE ===== */
 @media screen and (max-width: 992px) {
   .hero {
-    flex-direction: column;
+    padding: 80px 20px;
     text-align: center;
   }
 
-  .hero-left, .hero-right {
-    max-width: 100%;
+  .hero-title {
+    font-size: 2rem;
   }
 
-  .services-grid, .mini-grid {
+  .hero-lead {
+    font-size: 1rem;
+  }
+
+  .services-grid,
+  .mini-grid {
     flex-direction: column;
   }
 
@@ -433,13 +440,5 @@ body {
   .main-nav ul {
     flex-direction: column;
     gap: 15px;
-  }
-
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .hero-lead {
-    font-size: 1rem;
   }
 }
