@@ -95,9 +95,9 @@ body {
   font-size: 3rem;
   color: #e63946;
   margin-bottom: 20px;
-  overflow: visible;        /* fix letters getting cut off */
-  white-space: nowrap;      /* keep text on one line */
-  display: inline-block;    /* allow cursor animation */
+  overflow: visible;        /* letters show fully */
+  display: inline-block;    /* cursor positioning */
+  word-wrap: break-word;    /* wrap on mobile */
 }
 
 .hero-title.typing::after {
@@ -114,7 +114,7 @@ body {
   font-size: 1.2rem;
   margin-bottom: 30px;
   color: #fff;
-  opacity: 0;               /* fade in after typing */
+  opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
@@ -436,5 +436,14 @@ body {
   .main-nav ul {
     flex-direction: column;
     gap: 15px;
+  }
+
+  /* Make hero-title wrap on smaller screens */
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-lead {
+    font-size: 1rem;
   }
 }
