@@ -21,7 +21,7 @@ if (curtain) {
   });
 }
 
-// ===== SMOOTH SCROLL =====
+// ===== SMOOTH SCROLL FOR ANCHORS =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
@@ -29,32 +29,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if (target) target.scrollIntoView({ behavior: 'smooth' });
   });
 });
-
-// ===== HERO TYPEWRITER =====
-const heroTitle = document.querySelector('.hero-title');
-const heroLead = document.querySelector('.hero-lead');
-
-if (heroTitle && heroLead) {
-  const text = heroTitle.getAttribute('data-text');
-  let i = 0;
-
-  function typeWriter() {
-    if (i < text.length) {
-      heroTitle.textContent += text.charAt(i);
-      i++;
-      setTimeout(typeWriter, 30); // typing speed
-    } else {
-      heroLead.style.opacity = 1;
-      heroLead.style.transform = 'translateY(0)';
-    }
-  }
-
-  window.addEventListener('load', typeWriter);
-  
-  heroLead.style.opacity = 0;
-  heroLead.style.transform = 'translateY(20px)';
-  heroLead.style.transition = 'all 1s ease';
-}
 
 // ===== PORTFOLIO HOVER =====
 const portfolioCards = document.querySelectorAll('.mini-card');
@@ -115,4 +89,35 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+});
+
+// ===== HERO TYPEWRITER =====
+document.addEventListener('DOMContentLoaded', () => {
+  const heroTitle = document.querySelector('.hero-title');
+  const heroLead = document.querySelector('.hero-lead');
+  const text = "Luxury websites for your brand";
+  const speed = 50; // typing speed in ms
+  let index = 0;
+
+  function type() {
+    if (index < text.length) {
+      heroTitle.textContent += text.charAt(index);
+      index++;
+      setTimeout(type, speed);
+    } else {
+      // stop cursor blink after typing complete
+      heroTitle.classList.remove('typing');
+      // fade in the hero lead
+      if (heroLead) {
+        heroLead.style.opacity = '1';
+        heroLead.style.transform = 'translateY(0)';
+      }
+    }
+  }
+
+  if (heroTitle) {
+    heroTitle.textContent = '';
+    heroTitle.classList.add('typing');
+    type();
+  }
 });
