@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     answer.style.maxHeight = '0';
     answer.style.overflow = 'hidden';
     answer.style.transition = 'max-height 0.4s ease';
-
+    
     btn.addEventListener('click', () => {
       const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
       if (isOpen) {
@@ -91,26 +91,43 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// ===== TYPEWRITER HERO TEXT =====
+// ===== HERO TYPING EFFECT =====
 document.addEventListener('DOMContentLoaded', () => {
-  const heroTitle = document.querySelector('.hero-title');
-  if (!heroTitle) return;
+  const typedEl = document.getElementById('typed-text');
+  if (!typedEl) return;
 
-  const text = heroTitle.getAttribute('data-text') || heroTitle.textContent;
-  heroTitle.textContent = '';
-  heroTitle.classList.add('typing');
-
-  let i = 0;
-  const speed = 50; // typing speed in ms
+  const phrases = ["Luxury websites for your brand", "Grow your business online", "Modern, fast & responsive"];
+  let currentPhrase = 0;
+  let currentLetter = 0;
+  let deleting = false;
+  let typeSpeed = 80;
 
   function type() {
-    if (i < text.length) {
-      heroTitle.textContent += text[i];
-      i++;
-      setTimeout(type, speed);
+    const phrase = phrases[currentPhrase];
+    
+    if (!deleting) {
+      typedEl.textContent = phrase.slice(0, currentLetter + 1);
+      currentLetter++;
+      if (currentLetter === phrase.length) {
+        deleting = true;
+        typeSpeed = 1200; // pause at end
+      } else {
+        typeSpeed = 80;
+      }
     } else {
-      heroTitle.classList.remove('typing');
+      typedEl.textContent = phrase.slice(0, currentLetter - 1);
+      currentLetter--;
+      if (currentLetter === 0) {
+        deleting = false;
+        currentPhrase = (currentPhrase + 1) % phrases.length;
+        typeSpeed = 300;
+      } else {
+        typeSpeed = 40;
+      }
     }
+
+    setTimeout(type, typeSpeed);
   }
+
   type();
 });
