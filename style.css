@@ -76,46 +76,54 @@ body {
   border-radius: 2px;
 }
 
+/* ===== HEADER BUTTONS ===== */
+.header-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+@media screen and (max-width: 992px) {
+  .header-buttons {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    align-items: center;
+  }
+
+  .header-buttons .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 /* ===== HERO ===== */
 .hero {
   display: flex;
-  justify-content: flex-start; /* aligns content to top */
-  align-items: flex-start;
-  flex-direction: column;
-  padding: 100px 0 60px;
-  min-height: auto; /* allows height to shrink to content */
+  justify-content: space-between;
+  align-items: center;
+  padding: 120px 0 60px;
+  min-height: 80vh;
   position: relative;
 }
 
 .hero-left {
-  max-width: 100%;
-  width: 100%;
+  max-width: 50%;
 }
 
 .hero-title {
   font-size: 3rem;
   color: #e63946;
   margin-bottom: 20px;
-  line-height: 1.2;
-  white-space: pre-wrap; /* wrap text automatically */
-  word-break: break-word; /* break long words if needed */
+  line-height: 1.2; /* fix spacing for typewriter */
+  white-space: normal; /* wrap text */
   overflow-wrap: break-word;
-}
-
-.hero-title.typing::after {
-  content: '|';
-  animation: blink 0.7s infinite;
-}
-
-@keyframes blink {
-  0%, 50%, 100% { opacity: 1; }
-  25%, 75% { opacity: 0; }
 }
 
 .hero-lead {
   font-size: 1.2rem;
   margin-bottom: 30px;
   color: #fff;
+  line-height: 1.5;
 }
 
 /* ===== BUTTONS ===== */
@@ -400,20 +408,15 @@ body {
 /* ===== RESPONSIVE ===== */
 @media screen and (max-width: 992px) {
   .hero {
-    padding: 80px 20px;
+    flex-direction: column;
     text-align: center;
   }
 
-  .hero-title {
-    font-size: 2rem;
+  .hero-left, .hero-right {
+    max-width: 100%;
   }
 
-  .hero-lead {
-    font-size: 1rem;
-  }
-
-  .services-grid,
-  .mini-grid {
+  .services-grid, .mini-grid {
     flex-direction: column;
   }
 
@@ -440,5 +443,13 @@ body {
   .main-nav ul {
     flex-direction: column;
     gap: 15px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-lead {
+    font-size: 1rem;
   }
 }
