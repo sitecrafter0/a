@@ -67,7 +67,7 @@ const imageObserver = new IntersectionObserver((entries, observer) => {
 });
 lazyImages.forEach(img => imageObserver.observe(img));
 
-// ===== FAQ TOGGLE =====
+// ===== FAQ TOGGLE WITH SLIDE =====
 document.addEventListener('DOMContentLoaded', () => {
   const faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach(item => {
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     answer.style.maxHeight = '0';
     answer.style.overflow = 'hidden';
     answer.style.transition = 'max-height 0.4s ease';
-    
+
     btn.addEventListener('click', () => {
       const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
       if (isOpen) {
@@ -91,33 +91,26 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// ===== HERO TYPEWRITER =====
+// ===== TYPEWRITER HERO TEXT =====
 document.addEventListener('DOMContentLoaded', () => {
   const heroTitle = document.querySelector('.hero-title');
-  const heroLead = document.querySelector('.hero-lead');
-  const text = "Luxury websites for your brand";
+  if (!heroTitle) return;
+
+  const text = heroTitle.getAttribute('data-text') || heroTitle.textContent;
+  heroTitle.textContent = '';
+  heroTitle.classList.add('typing');
+
+  let i = 0;
   const speed = 50; // typing speed in ms
-  let index = 0;
 
   function type() {
-    if (index < text.length) {
-      heroTitle.textContent += text.charAt(index);
-      index++;
+    if (i < text.length) {
+      heroTitle.textContent += text[i];
+      i++;
       setTimeout(type, speed);
     } else {
-      // stop cursor blink after typing complete
       heroTitle.classList.remove('typing');
-      // fade in the hero lead
-      if (heroLead) {
-        heroLead.style.opacity = '1';
-        heroLead.style.transform = 'translateY(0)';
-      }
     }
   }
-
-  if (heroTitle) {
-    heroTitle.textContent = '';
-    heroTitle.classList.add('typing');
-    type();
-  }
+  type();
 });
