@@ -35,6 +35,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .brand {
@@ -76,26 +77,6 @@ body {
   border-radius: 2px;
 }
 
-/* ===== HEADER BUTTONS ===== */
-.header-buttons {
-  display: flex;
-  gap: 15px;
-}
-
-@media screen and (max-width: 992px) {
-  .header-buttons {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-    align-items: center;
-  }
-
-  .header-buttons .btn {
-    width: 100%;
-    text-align: center;
-  }
-}
-
 /* ===== HERO ===== */
 .hero {
   display: flex;
@@ -104,18 +85,20 @@ body {
   padding: 120px 0 60px;
   min-height: 80vh;
   position: relative;
+  flex-wrap: wrap;
 }
 
 .hero-left {
   max-width: 50%;
+  width: 100%;
 }
 
 .hero-title {
   font-size: 3rem;
   color: #e63946;
   margin-bottom: 20px;
-  line-height: 1.2; /* fix spacing for typewriter */
-  white-space: normal; /* wrap text */
+  line-height: 1.2;
+  white-space: normal;
   overflow-wrap: break-word;
 }
 
@@ -123,7 +106,6 @@ body {
   font-size: 1.2rem;
   margin-bottom: 30px;
   color: #fff;
-  line-height: 1.5;
 }
 
 /* ===== BUTTONS ===== */
@@ -133,6 +115,7 @@ body {
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .btn-primary {
@@ -155,6 +138,27 @@ body {
 .btn-outline:hover {
   background: #e63946;
   color: #fff;
+}
+
+/* Header buttons wrapper for mobile fix */
+.header-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+@media screen and (max-width: 992px) {
+  .header-buttons {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    align-items: stretch;
+  }
+
+  .header-buttons .btn {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
 }
 
 /* ===== PREVIEW CARD ===== */
@@ -414,6 +418,7 @@ body {
 
   .hero-left, .hero-right {
     max-width: 100%;
+    width: 100%;
   }
 
   .services-grid, .mini-grid {
@@ -443,13 +448,5 @@ body {
   .main-nav ul {
     flex-direction: column;
     gap: 15px;
-  }
-
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .hero-lead {
-    font-size: 1rem;
   }
 }
