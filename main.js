@@ -21,7 +21,7 @@ if (curtain) {
   });
 }
 
-// ===== SMOOTH SCROLL FOR ANCHORS =====
+// ===== SMOOTH SCROLL =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
@@ -29,6 +29,32 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if (target) target.scrollIntoView({ behavior: 'smooth' });
   });
 });
+
+// ===== HERO TYPEWRITER =====
+const heroTitle = document.querySelector('.hero-title');
+const heroLead = document.querySelector('.hero-lead');
+
+if (heroTitle && heroLead) {
+  const text = heroTitle.getAttribute('data-text');
+  let i = 0;
+
+  function typeWriter() {
+    if (i < text.length) {
+      heroTitle.textContent += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, 30); // typing speed
+    } else {
+      heroLead.style.opacity = 1;
+      heroLead.style.transform = 'translateY(0)';
+    }
+  }
+
+  window.addEventListener('load', typeWriter);
+  
+  heroLead.style.opacity = 0;
+  heroLead.style.transform = 'translateY(20px)';
+  heroLead.style.transition = 'all 1s ease';
+}
 
 // ===== PORTFOLIO HOVER =====
 const portfolioCards = document.querySelectorAll('.mini-card');
@@ -67,7 +93,7 @@ const imageObserver = new IntersectionObserver((entries, observer) => {
 });
 lazyImages.forEach(img => imageObserver.observe(img));
 
-// ===== FAQ TOGGLE WITH SLIDE =====
+// ===== FAQ TOGGLE =====
 document.addEventListener('DOMContentLoaded', () => {
   const faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach(item => {
