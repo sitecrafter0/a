@@ -41,7 +41,7 @@ body {
 .brand {
   font-size: 1.8rem;
   font-weight: 800;
-  color: #e63946;
+  color: #4da6ff; /* blue */
 }
 
 .main-nav ul {
@@ -59,7 +59,7 @@ body {
 
 .main-nav a:hover,
 .main-nav a.active {
-  color: #e63946;
+  color: #4da6ff; /* blue */
 }
 
 .nav-toggle {
@@ -73,70 +73,108 @@ body {
   display: block;
   height: 3px;
   width: 25px;
-  background: #e63946;
+  background: #4da6ff; /* blue */
   border-radius: 2px;
 }
 
-/* ===== HERO ===== */
+/* ===== HERO WITH LIVE VIDEO ===== */
 .hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 120px 0 60px;
-  min-height: 80vh;
   position: relative;
-  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 20px;
+  min-height: 80vh;
+  color: #fff;
+  overflow: hidden;
 }
 
-.hero-left {
-  max-width: 50%;
+.hero-video-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hero-video-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.65));
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.25);
+  pointer-events: none;
+  animation: heroZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
 }
 
 .hero-title {
   font-size: 3rem;
-  color: #e63946;
+  color: #4da6ff;
   margin-bottom: 20px;
-  line-height: 1.2;
-  white-space: normal;
-  overflow-wrap: break-word;
+  text-shadow: 0 2px 15px rgba(0,0,0,0.7);
 }
 
 .hero-lead {
   font-size: 1.2rem;
   margin-bottom: 30px;
   color: #fff;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.6);
 }
 
-/* ===== BUTTONS ===== */
 .btn {
   padding: 12px 30px;
   border-radius: 8px;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
-  white-space: nowrap;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .btn-primary {
-  background: #e63946;
-  border: 2px solid #e63946;
+  background: #4da6ff;
+  border: 2px solid #4da6ff;
   color: #fff;
 }
 
 .btn-primary:hover {
   background: #fff;
-  color: #e63946;
+  color: #4da6ff;
 }
 
 .btn-outline {
   background: transparent;
-  border: 2px solid #e63946;
-  color: #e63946;
+  border: 2px solid #4da6ff;
+  color: #4da6ff;
 }
 
 .btn-outline:hover {
-  background: #e63946;
+  background: #4da6ff;
   color: #fff;
 }
 
@@ -164,21 +202,21 @@ body {
 /* ===== PREVIEW CARD ===== */
 .preview-card {
   background: #111;
-  border: 2px solid #e63946;
+  border: 2px solid #4da6ff;
   border-radius: 12px;
   padding: 20px;
   max-width: 350px;
-  box-shadow: 0 0 20px rgba(230,57,70,0.5);
+  box-shadow: 0 0 20px rgba(77,166,255,0.5);
   transition: all 0.3s ease;
 }
 
 .preview-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(230,57,70,0.7);
+  box-shadow: 0 0 30px rgba(77,166,255,0.7);
 }
 
 .preview-badge {
-  background: #e63946;
+  background: #4da6ff;
   color: #fff;
   display: inline-block;
   padding: 5px 10px;
@@ -231,7 +269,7 @@ body {
 
 .section-title {
   font-size: 2rem;
-  color: #e63946;
+  color: #4da6ff;
   margin-bottom: 15px;
 }
 
@@ -250,22 +288,22 @@ body {
 
 .service {
   background: #111;
-  border: 2px solid #e63946;
+  border: 2px solid #4da6ff;
   padding: 30px 20px;
   border-radius: 12px;
   flex: 1 1 30%;
-  box-shadow: 0 0 20px rgba(230,57,70,0.5);
+  box-shadow: 0 0 20px rgba(77,166,255,0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
 }
 
 .service:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(230,57,70,0.7);
+  box-shadow: 0 0 30px rgba(77,166,255,0.7);
 }
 
 .service h4 {
-  color: #e63946;
+  color: #4da6ff;
   margin-bottom: 15px;
   font-size: 1.5rem;
 }
@@ -285,11 +323,11 @@ body {
 
 .mini-card {
   background: #111;
-  border: 2px solid #e63946;
+  border: 2px solid #4da6ff;
   border-radius: 12px;
   overflow: hidden;
   flex: 1 1 calc(33% - 20px);
-  box-shadow: 0 0 20px rgba(230,57,70,0.5);
+  box-shadow: 0 0 20px rgba(77,166,255,0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -300,13 +338,13 @@ body {
 
 .mini-card h4 {
   padding: 15px;
-  color: #e63946;
+  color: #4da6ff;
 }
 
 .mini-card a {
   display: block;
   padding: 10px 15px;
-  background: #e63946;
+  background: #4da6ff;
   text-align: center;
   color: #fff;
   text-decoration: none;
@@ -316,28 +354,28 @@ body {
 
 .mini-card a:hover {
   background: #fff;
-  color: #e63946;
+  color: #4da6ff;
 }
 
 /* ===== FAQ ===== */
 .faq-item {
   background: #111;
-  border: 2px solid #e63946;
+  border: 2px solid #4da6ff;
   border-radius: 12px;
   margin-bottom: 20px;
   overflow: hidden;
-  box-shadow: 0 0 15px rgba(230,57,70,0.5);
+  box-shadow: 0 0 15px rgba(77,166,255,0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .faq-item:hover {
   transform: scale(1.02);
-  box-shadow: 0 0 25px rgba(230,57,70,0.7);
+  box-shadow: 0 0 25px rgba(77,166,255,0.7);
 }
 
 .faq-question {
   background: #000;
-  color: #e63946;
+  color: #4da6ff;
   font-weight: 700;
   padding: 20px;
   width: 100%;
@@ -383,7 +421,7 @@ body {
   width: 100%;
   padding: 12px 15px;
   border-radius: 8px;
-  border: 2px solid #e63946;
+  border: 2px solid #4da6ff;
   background: #111;
   color: #fff;
   resize: vertical;
@@ -406,7 +444,7 @@ body {
   padding: 30px 0;
   text-align: center;
   margin-top: 50px;
-  border-top: 2px solid #e63946;
+  border-top: 2px solid #4da6ff;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -414,6 +452,14 @@ body {
   .hero {
     flex-direction: column;
     text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-lead {
+    font-size: 1rem;
   }
 
   .hero-left, .hero-right {
@@ -437,7 +483,7 @@ body {
     flex-direction: column;
     width: 200px;
     display: none;
-    border-left: 2px solid #e63946;
+    border-left: 2px solid #4da6ff;
     padding: 20px;
   }
 
@@ -448,5 +494,9 @@ body {
   .main-nav ul {
     flex-direction: column;
     gap: 15px;
+  }
+
+  .btn {
+    width: 100%;
   }
 }

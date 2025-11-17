@@ -4,20 +4,23 @@ document.addEventListener('DOMContentLoaded', () => {
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 });
 
+// ===== HERO VIDEO PLAY =====
+const heroVideo = document.querySelector('.hero-video');
+if (heroVideo) {
+  heroVideo.autoplay = true;
+  heroVideo.loop = true;
+  heroVideo.muted = true; // required for autoplay in most browsers
+  heroVideo.play().catch(() => {
+    console.log('Hero video playback prevented by browser.');
+  });
+}
+
 // ===== MOBILE NAV TOGGLE =====
 const navToggle = document.getElementById('navToggle');
 const mainNav = document.getElementById('mainNav');
 if (navToggle && mainNav) {
   navToggle.addEventListener('click', () => {
     mainNav.classList.toggle('show');
-  });
-}
-
-// ===== CURTAIN SCROLL REVEAL =====
-const curtain = document.getElementById('curtain');
-if (curtain) {
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) curtain.classList.add('open');
   });
 }
 
@@ -35,11 +38,11 @@ const portfolioCards = document.querySelectorAll('.mini-card');
 portfolioCards.forEach(card => {
   card.addEventListener('mouseenter', () => {
     card.style.transform = 'scale(1.08)';
-    card.style.boxShadow = '0 0 30px rgba(230,57,70,0.7)';
+    card.style.boxShadow = '0 0 30px rgba(70,130,230,0.7)'; // blue hover
   });
   card.addEventListener('mouseleave', () => {
     card.style.transform = 'scale(1)';
-    card.style.boxShadow = '0 0 20px rgba(230,57,70,0.5)';
+    card.style.boxShadow = '0 0 20px rgba(100,149,237,0.5)'; // lighter blue
   });
 });
 
@@ -96,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroTitle = document.querySelector('.hero-title');
   if (!heroTitle) return;
 
-  const text = heroTitle.getAttribute('data-text') || heroTitle.textContent;
+  const text = heroTitle.textContent; // now we just use the text content
   heroTitle.textContent = '';
   heroTitle.classList.add('typing');
 
