@@ -130,6 +130,7 @@ body {
   z-index: 2;
   text-align: center;
   max-width: 800px;
+  padding: 0 20px;
 }
 
 .hero-title {
@@ -182,21 +183,6 @@ body {
 .header-buttons {
   display: flex;
   gap: 15px;
-}
-
-@media screen and (max-width: 992px) {
-  .header-buttons {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-    align-items: stretch;
-  }
-
-  .header-buttons .btn {
-    width: 100%;
-    text-align: center;
-    box-sizing: border-box;
-  }
 }
 
 /* ===== PREVIEW CARD ===== */
@@ -452,6 +438,7 @@ body {
   .hero {
     flex-direction: column;
     text-align: center;
+    padding: 100px 20px;
   }
 
   .hero-title {
@@ -462,12 +449,8 @@ body {
     font-size: 1rem;
   }
 
-  .hero-left, .hero-right {
-    max-width: 100%;
-    width: 100%;
-  }
-
-  .services-grid, .mini-grid {
+  .services-grid,
+  .mini-grid {
     flex-direction: column;
   }
 
@@ -481,9 +464,10 @@ body {
     right: 0;
     background: #111;
     flex-direction: column;
-    width: 200px;
+    width: 100%;
+    max-width: 300px;
     display: none;
-    border-left: 2px solid #4da6ff;
+    border-left: none;
     padding: 20px;
   }
 
@@ -498,5 +482,10 @@ body {
 
   .btn {
     width: 100%;
+  }
+
+  .header-buttons {
+    flex-direction: column;
+    gap: 10px;
   }
 }

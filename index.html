@@ -31,17 +31,18 @@
 
   <!-- ===== HERO / CODING VIDEO ===== -->
   <section class="hero">
-    <div class="hero-video-wrapper">
-      <video class="hero-video" autoplay muted loop playsinline>
+    <div class="hero-video-wrapper" style="position:absolute; top:0; left:0; width:100%; height:100%; overflow:hidden; z-index:0;">
+      <video class="hero-video" autoplay muted loop playsinline
+             style="width:100%; height:100%; object-fit:cover; filter:brightness(0.25);">
         <!-- Replace the src URL below with your coding‑video file URL -->
         <source src="7534239-hd_1920_1080_25fps.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
-    <div class="hero-content">
-      <h1 class="hero-title">Luxury Websites Built for Your Brand</h1>
-      <p class="hero-lead">We craft custom websites that are fast, secure, and leave a lasting impression.</p>
-      <div class="hero-cta header-buttons">
+    <div class="hero-content" style="position:relative; z-index:1; max-width:800px; margin:0 auto; text-align:center; padding:120px 20px 60px;">
+      <h1 class="hero-title" style="font-size:3rem; color:#4da6ff; margin-bottom:20px;">Luxury Websites Built for Your Brand</h1>
+      <p class="hero-lead" style="font-size:1.2rem; margin-bottom:30px; color:#fff;">We craft custom websites that are fast, secure, and leave a lasting impression.</p>
+      <div class="hero-cta header-buttons" style="display:flex; gap:15px; flex-wrap:wrap; justify-content:center;">
         <a href="#services" class="btn btn-primary">Our Services</a>
         <a href="portfolio.html" class="btn btn-outline">See Portfolio</a>
       </div>
@@ -83,5 +84,28 @@
 
   <!-- ===== MAIN JS ===== -->
   <script src="main.js"></script>
+
+  <!-- ===== RESPONSIVE HERO VIDEO FOR MOBILE ===== -->
+  <style>
+    @media screen and (max-width: 992px) {
+      .hero-content {
+        padding: 100px 15px 50px !important;
+      }
+      .hero-title {
+        font-size: 2.2rem !important;
+      }
+      .hero-lead {
+        font-size: 1rem !important;
+      }
+      .header-buttons {
+        flex-direction: column !important;
+        gap: 10px !important;
+      }
+      .btn {
+        width: 100% !important;
+        text-align: center !important;
+      }
+    }
+  </style>
 </body>
 </html>
