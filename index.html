@@ -271,6 +271,59 @@ footer a { color:#00d4ff; }
   .hero-lead { font-size:0.95rem; }
   .btn { padding:12px 24px; font-size:0.9rem; }
 }
+<style>
+/* Hamburger Menu */
+.hamburger {
+  display:none;
+  flex-direction: column;
+  cursor:pointer;
+  gap:5px;
+}
+.hamburger span {
+  display:block;
+  width:25px;
+  height:3px;
+  background:#fff;
+  border-radius:3px;
+  transition:all 0.3s ease;
+}
+
+/* Mobile Navigation */
+@media screen and (max-width:768px){
+  nav {
+    position: absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background: linear-gradient(90deg,#000,#001a33);
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.3s ease;
+  }
+  nav ul {
+    flex-direction: column;
+    gap:15px;
+    padding:15px 0;
+    align-items:center;
+  }
+  nav.show {
+    max-height:300px; /* Adjust if more links */
+  }
+  .hamburger { display:flex; }
+}
+
+/* Hamburger animation when open */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px,5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity:0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px,-6px);
+}
+</style>
+
 </style>
 
 
@@ -282,7 +335,15 @@ footer a { color:#00d4ff; }
 <header>
   <div class="container">
     <div class="brand">SiteCrafter</div>
-    <nav>
+
+    <!-- Hamburger Button -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav id="nav-menu">
       <ul>
         <li><a href="#hero" class="active">Home</a></li>
         <li><a href="service.html">Services</a></li>
@@ -292,6 +353,7 @@ footer a { color:#00d4ff; }
     </nav>
   </div>
 </header>
+
 
 <!-- ===== HERO ===== -->
 <section class="hero" id="hero">
