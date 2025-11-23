@@ -1,122 +1,433 @@
 <!DOCTYPE html>
 <html lang="en">
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SiteCrafter — Luxury Websites Built for Your Brand</title>
+<meta name="description" content="SiteCrafter builds fast, secure, and stunning custom websites that elevate your brand and leave a lasting impression.">
+<style>
+/* ================== RESET ================== */
+* {
+  margin:0; 
+  padding:0; 
+  box-sizing:border-box; 
+  font-family: 'Arial', sans-serif;
+}
+html { scroll-behavior: smooth; }
+body { background:#fff; color:#000; line-height:1.6; overflow-x:hidden; }
 
-    <!-- Add this -->
-    <meta name="description" content="SiteCrafter creates modern, fast, and high-converting websites for businesses in South Africa. Professional web design, responsive layouts, SEO-friendly builds, and custom branding to help your business grow online." />
+a { text-decoration:none; }
 
-    <title>SiteCrafter — Professional Web Design</title>
+/* ================== HEADER ================== */
+header {
+  width:100%;
+  background: linear-gradient(90deg,#000,#001a33);
+  color:#fff;
+  position:sticky;
+  top:0;
+  z-index:999;
+  box-shadow:0 6px 15px rgba(0,0,0,0.3);
+}
+.container {
+  width:90%;
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 0;
+}
+.brand {
+  font-size:1.8rem;
+  font-weight:bold;
+  color:#fff;
+  text-shadow:1px 1px 3px rgba(0,0,0,0.5);
+}
+nav ul {
+  display:flex;
+  list-style:none;
+  gap:25px;
+}
+nav ul li a {
+  color:#fff;
+  font-weight:500;
+  transition:all 0.3s ease;
+  position:relative;
+}
+nav ul li a::after {
+  content:"";
+  position:absolute;
+  width:0;
+  height:2px;
+  bottom:-4px;
+  left:0;
+  background:#007bff;
+  transition:0.3s;
+}
+nav ul li a:hover::after,
+nav ul li a.active::after { width:100%; }
+nav ul li a:hover { color:#007bff; }
 
-    <link rel="stylesheet" href="style.css" />
+/* ================== HERO ================== */
+.hero { 
+  position:relative; 
+  height:95vh; 
+  display:flex; 
+  align-items:center; 
+  justify-content:center; 
+  text-align:center; 
+  overflow:hidden; 
+  background: linear-gradient(135deg,#ffffff,#e0f7ff); 
+}
+.hero-video-wrapper { 
+  position:absolute; 
+  top:0; left:0; 
+  width:100%; height:100%; 
+  overflow:hidden; 
+  z-index:0; 
+}
+.hero-video { 
+  width:100%; height:100%; 
+  object-fit:cover; 
+  filter:brightness(0.3); 
+}
+.hero-overlay { 
+  position:absolute; 
+  top:0; left:0; 
+  width:100%; height:100%; 
+  background: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.3)); 
+  z-index:0; 
+}
+.hero-content { 
+  position:relative; 
+  z-index:1; 
+  max-width:900px; 
+  margin:0 auto; 
+  padding:0 20px; 
+}
+.hero-title { 
+  font-size:3rem; 
+  color:#fff; 
+  margin-bottom:20px; 
+  text-shadow:2px 2px 8px rgba(0,0,0,0.7); 
+  opacity:0; 
+  transform:translateY(30px); 
+  transition:all 1s ease; 
+}
+.hero-lead { 
+  font-size:1.3rem; 
+  color:#00aaff; 
+  margin-bottom:30px; 
+  text-shadow:1px 1px 5px rgba(0,0,0,0.5); 
+  opacity:0; 
+  transform:translateY(30px); 
+  transition:all 1s ease 0.3s; 
+}
+.hero-cta { 
+  display:flex; 
+  gap:15px; 
+  flex-wrap:wrap; 
+  justify-content:center; 
+  opacity:0; 
+  transform:translateY(30px); 
+  transition:all 1s ease 0.6s; 
+}
+.btn { 
+  padding:14px 36px; 
+  border-radius:8px; 
+  font-weight:bold; 
+  transition:all 0.4s ease; 
+  display:inline-block; 
+  box-shadow:0 8px 25px rgba(0,0,0,0.3); 
+}
+.btn-primary { 
+  background: linear-gradient(135deg,#007bff,#00d4ff); 
+  color:#fff; 
+  animation: bounce 2s infinite; 
+}
+.btn-primary:hover { 
+  background: linear-gradient(135deg,#0056b3,#00b2e6); 
+  transform:scale(1.1); 
+  box-shadow:0 12px 30px rgba(0,0,0,0.5); 
+}
+.btn-outline { 
+  background:#fff; 
+  border:2px solid #007bff; 
+  color:#007bff; 
+}
+.btn-outline:hover { 
+  background:#007bff; 
+  color:#fff; 
+  transform:scale(1.05); 
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* ================== MINI SERVICES ================== */
+.mini-services { 
+  padding:80px 0; 
+  display:flex; 
+  justify-content:center; 
+  gap:30px; 
+  flex-wrap:wrap; 
+  background: linear-gradient(135deg,#ffffff,#d0f0ff);
+}
+.mini-card { 
+  background:linear-gradient(135deg,#f8f8f8,#e6f2ff); 
+  padding:30px; 
+  border-radius:12px; 
+  width:270px; 
+  text-align:center; 
+  transition:all 0.4s ease; 
+  opacity:0; 
+  transform:translateY(30px);
+}
+.mini-card:hover { 
+  transform:translateY(-12px); 
+  box-shadow:0 16px 40px rgba(0,0,0,0.25); 
+}
+.mini-card-icon { 
+  font-size:2.5rem; 
+  margin-bottom:15px; 
+  background: linear-gradient(45deg,#007bff,#00d4ff); 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+}
+.mini-card h4 { color:#000; margin-bottom:15px; }
+.mini-card p { font-size:1rem; color:#000; }
+
+/* ================== EXPERIENCE ================== */
+.experience { 
+  padding:120px 0; 
+  text-align:center; 
+  background: linear-gradient(135deg,#ffffff,#e0f7ff); 
+}
+.experience h2 { font-size:2.8rem; color:#000; margin-bottom:20px; opacity:0; transform:translateY(30px); transition:all 1s ease; }
+.experience-desc { font-size:1.1rem; color:#000; margin-bottom:50px; opacity:0; transform:translateY(30px); transition:all 1s ease 0.3s; }
+.experience-counters { display:flex; justify-content:center; gap:60px; flex-wrap:wrap; opacity:0; transform:translateY(30px); transition:all 1s ease 0.6s; }
+.counter { font-size:3rem; color:#00aaff; font-weight:bold; margin-bottom:10px; text-shadow:0 2px 6px rgba(0,0,0,0.3);}
+.counter-label { color:#000; font-weight:500; font-size:1rem; }
+
+/* ================== WHY CHOOSE US ================== */
+.why-choose { 
+  padding:100px 0; 
+  text-align:center; 
+  background: linear-gradient(135deg,#ffffff,#cce6ff); 
+}
+.why-choose h2 { font-size:2.8rem; color:#000; margin-bottom:20px; opacity:0; transform:translateY(30px); transition:all 1s ease; }
+.why-choose-desc { font-size:1.1rem; color:#000; margin-bottom:40px; opacity:0; transform:translateY(30px); transition:all 1s ease 0.3s; }
+.why-grid { display:flex; justify-content:center; gap:30px; flex-wrap:wrap; }
+.why-card { 
+  background:#f8f8f8; 
+  padding:30px; 
+  border-radius:12px; 
+  width:270px; 
+  position:relative; 
+  transition:all 0.4s ease; 
+  opacity:0; 
+  transform:translateY(30px); 
+  overflow:hidden; 
+}
+.why-card:hover { transform:translateY(-14px); box-shadow:0 16px 45px rgba(0,0,0,0.25); }
+.why-card h4 { color:#000; margin-bottom:15px; }
+.why-card p { color:#000; font-size:1rem; }
+.why-card img { width:80px; height:80px; border-radius:50%; margin-bottom:15px; object-fit:cover; }
+
+/* ================== OUR VALUES ================== */
+.values { 
+  padding:100px 0; 
+  text-align:center; 
+  background: linear-gradient(135deg,#ffffff,#cce6ff); 
+}
+.values h2 { font-size:2.8rem; color:#000; margin-bottom:20px; opacity:0; transform:translateY(30px); transition:all 1s ease; }
+.values-grid { display:flex; justify-content:center; gap:30px; flex-wrap:wrap; }
+.value-card { 
+  background:linear-gradient(135deg,#e6f2ff,#ffffff); 
+  padding:30px; 
+  border-radius:12px; 
+  width:240px; 
+  position:relative; 
+  transition:all 0.4s ease; 
+  opacity:0; 
+  transform:translateY(30px); 
+  overflow:hidden;
+}
+.value-card:hover { transform:translateY(-14px); box-shadow:0 16px 40px rgba(0,0,0,0.25); }
+.value-card h4 { color:#000; margin-bottom:15px; }
+.value-card p { color:#000; font-size:1rem; }
+.value-card img { width:80px; height:80px; border-radius:50%; margin-bottom:15px; object-fit:cover; }
+
+/* ================== FOOTER ================== */
+footer { 
+  background: linear-gradient(90deg,#000,#001a33); 
+  color:#fff; 
+  text-align:center; 
+  padding:25px 0; 
+  font-size:0.9rem; 
+  box-shadow:0 -6px 15px rgba(0,0,0,0.3);
+}
+footer a { color:#00d4ff; }
+
+/* ================== MEDIA ================== */
+@media screen and (max-width:992px){
+  .hero-title { font-size:2.4rem; }
+  .hero-lead { font-size:1.1rem; }
+  .hero-cta { flex-direction:column; gap:12px; }
+  .mini-services, .experience-counters, .why-grid, .values-grid { flex-direction:column; align-items:center; }
+}
+
+</style>
 </head>
 <body>
 
-<body>
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="container">
+    <div class="brand">SiteCrafter</div>
+    <nav>
+      <ul>
+        <li><a href="#hero" class="active">Home</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="prices.html">Prices</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-  <!-- ===== HEADER ===== -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">SiteCrafter</div>
-      <nav class="main-nav" id="mainNav">
-        <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="nav-toggle" id="navToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="hero-video-wrapper">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="7534239-hd_1920_1080_25fps.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-content">
+    <h1 class="hero-title">Luxury Websites Built for Your Brand</h1>
+    <p class="hero-lead">Fast, secure, and visually stunning custom websites designed to impress and convert visitors into clients.</p>
+    <div class="hero-cta">
+      <a href="service.html" class="btn btn-primary">Our Services</a>
+      <a href="contact.html" class="btn btn-outline">Contact Us</a>
     </div>
-  </header>
+  </div>
+</section>
 
-  <!-- ===== HERO / CODING VIDEO ===== -->
-  <section class="hero">
-    <div class="hero-video-wrapper" style="position:absolute; top:0; left:0; width:100%; height:100%; overflow:hidden; z-index:0;">
-      <video class="hero-video" autoplay muted loop playsinline
-             style="width:100%; height:100%; object-fit:cover; filter:brightness(0.25);">
-        <!-- Replace the src URL below with your coding‑video file URL -->
-        <source src="7534239-hd_1920_1080_25fps.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+<!-- ===== MINI SERVICES ===== -->
+<section class="mini-services" id="mini-services">
+  <div class="mini-card">
+    <div class="mini-card-icon">🌐</div>
+    <h4>Web Design</h4>
+    <p>Responsive, modern websites tailored to your brand. Clean design, perfect UX, and conversion-focused layouts to maximize engagement.</p>
+  </div>
+  <div class="mini-card">
+    <div class="mini-card-icon">⚡</div>
+    <h4>SEO</h4>
+    <p>Advanced SEO strategies: on-page optimization, structured data, keywords, performance, backlinks. Increase visibility and drive traffic.</p>
+  </div>
+  <div class="mini-card">
+    <div class="mini-card-icon">📍</div>
+    <h4>Google Business Profile</h4>
+    <p>Optimize your business for local searches, showcase professional listings, photos, and reviews to attract local clients effectively.</p>
+  </div>
+</section>
+
+
+
+<!-- ===== WHY CHOOSE US ===== -->
+<section class="why-choose" id="why-choose">
+  <h2>Why Choose Us</h2>
+  <p class="why-choose-desc">Creativity, technology, and strategy come together. We prioritize aesthetics, functionality, and ROI to deliver websites that truly shine.</p>
+  <div class="why-grid">
+    <div class="why-card">
+      <img src="pexels-goumbik-574070.jpg" alt="Custom Designs">
+      <h4>Custom Designs</h4>
+      <p>Every project is unique. Focus on brand identity, UX, and high conversion potential for maximum impact.</p>
     </div>
-    <div class="hero-content" style="position:relative; z-index:1; max-width:800px; margin:0 auto; text-align:center; padding:120px 20px 60px;">
-      <h1 class="hero-title" style="font-size:3rem; color:#4da6ff; margin-bottom:20px;">Luxury Websites Built for Your Brand</h1>
-      <p class="hero-lead" style="font-size:1.2rem; margin-bottom:30px; color:#fff;">We craft custom websites that are fast, secure, and leave a lasting impression.</p>
-      <div class="hero-cta header-buttons" style="display:flex; gap:15px; flex-wrap:wrap; justify-content:center;">
-        <a href="#services" class="btn btn-primary">Our Services</a>
-        <a href="portfolio.html" class="btn btn-outline">See Portfolio</a>
-      </div>
+    <div class="why-card">
+      <img src="pexels-divinetechygirl-1181244.jpg" alt="Fast & Secure">
+      <h4>Fast & Secure</h4>
+      <p>Lightning-fast loading, top-tier security, seamless performance across devices, ultimate reliability.</p>
     </div>
-  </section>
-
-  <!-- ===== SERVICES HIGHLIGHTS ===== -->
-  <section class="curtain-section" id="services">
-    <div class="container curtain-content">
-      <h2 class="section-title" style="text-align:center; margin-bottom:60px; font-size:2.5rem; color:#4da6ff;">Our Services</h2>
-      <div class="services-grid" style="justify-content:center;">
-        
-        <div class="service">
-          <div style="font-size:2rem; margin-bottom:15px;">🎨</div>
-          <h4>Custom Designs</h4>
-          <p>No templates — only websites built specifically for your brand. Each design is unique and stunning.</p>
-        </div>
-
-        <div class="service">
-          <div style="font-size:2rem; margin-bottom:15px;">⚡</div>
-          <h4>SEO & Performance</h4>
-          <p>Websites that are fast, secure, and easy to find on search engines — optimized for your success.</p>
-        </div>
-
-        <div class="service">
-          <div style="font-size:2rem; margin-bottom:15px;">🛠️</div>
-          <h4>Ongoing Support</h4>
-          <p>We’re here to help even after your website goes live. Updates, fixes, and guidance whenever you need.</p>
-        </div>
-
-      </div>
+    <div class="why-card">
+      <img src="pexels-goumbik-574071.jpg" alt="Ongoing Support">
+      <h4>Ongoing Support</h4>
+      <p>Continuous guidance and updates post-launch. Your website stays flawless and up-to-date at all times.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="site-footer">
-    <p>&copy; <span id="year"></span> SiteCrafter. All rights reserved.</p>
-  </footer>
+<!-- ===== OUR VALUES ===== -->
+<section class="values" id="values">
+  <h2>Our Values</h2>
+  <div class="values-grid">
+    <div class="value-card">
+      <img src="pexels-yankrukov-7693153.jpg" alt="Integrity">
+      <h4>Integrity</h4>
+      <p>Transparency and honesty are core to our client relationships. We deliver on promises, always.</p>
+    </div>
+    <div class="value-card">
+      <img src="pexels-olly-3760067.jpg" alt="Quality">
+      <h4>Quality</h4>
+      <p>Premium design, high performance, attention to detail ensures every project exceeds expectations.</p>
+    </div>
+    <div class="value-card">
+      <img src="pexels-pixabay-355952.jpg" alt="Innovation">
+      <h4>Innovation</h4>
+      <p>Modern technology and creative solutions keep your website ahead of trends.</p>
+    </div>
+    <div class="value-card">
+      <img src="pexels-anete-lusina-4792284.jpg" alt="Customer Focus">
+      <h4>Customer Focus</h4>
+      <p>Client needs drive our solutions. Every design choice and strategy aligns with your goals.</p>
+    </div>
+  </div>
+</section>
 
-  <!-- ===== MAIN JS ===== -->
-  <script src="main.js"></script>
+<!-- ===== FOOTER ===== -->
+<footer>
+  &copy; <span id="year"></span> SiteCrafter. All rights reserved.
+</footer>
 
-  <!-- ===== RESPONSIVE HERO VIDEO FOR MOBILE ===== -->
-  <style>
-    @media screen and (max-width: 992px) {
-      .hero-content {
-        padding: 100px 15px 50px !important;
-      }
-      .hero-title {
-        font-size: 2.2rem !important;
-      }
-      .hero-lead {
-        font-size: 1rem !important;
-      }
-      .header-buttons {
-        flex-direction: column !important;
-        gap: 10px !important;
-      }
-      .btn {
-        width: 100% !important;
-        text-align: center !important;
-      }
+<!-- ===== JS ANIMATIONS & COUNTERS ===== -->
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+const counters = document.querySelectorAll('.counter');
+const options = { threshold: 0.5 };
+const counterObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      const counter = entry.target;
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-count');
+        const count = +counter.innerText;
+        const increment = target / 200;
+        if(count < target){
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount,10);
+        } else { counter.innerText = target; }
+      };
+      updateCount();
+      observer.unobserve(counter);
     }
-  </style>
+  });
+}, options);
+counters.forEach(counter => counterObserver.observe(counter));
+
+const faders = document.querySelectorAll('.hero-title, .hero-lead, .hero-cta, .mini-card, .experience h2, .experience-desc, .experience-counters, .why-choose h2, .why-choose-desc, .why-card, .values h2, .value-card');
+const appearOptions = { threshold:0.3, rootMargin:"0px 0px -50px 0px" };
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = 'translateY(0)';
+      observer.unobserve(entry.target);
+    }
+  });
+}, appearOptions);
+faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
 </body>
 </html>
-
-

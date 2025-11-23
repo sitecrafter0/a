@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SiteCrafter — Pricing</title>
+  <meta name="description" content="SiteCrafter pricing plans. Choose from our 500, 800, or 1200 Rand packages, each packed with premium web design services and perks.">
+  <style>
+    /* ========== RESET ========== */
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Arial',sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { background:#fff; color:#000; line-height:1.6; overflow-x:hidden; }
+
+    a { text-decoration:none; }
+
+    /* ========== HEADER ========== */
+    header {
+      width:100%;
+      background: linear-gradient(90deg,#000,#001a33);
+      color:#fff;
+      position:sticky;
+      top:0;
+      z-index:999;
+      box-shadow:0 6px 15px rgba(0,0,0,0.3);
+    }
+    .container { width:90%; max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding:15px 0; }
+    .brand { font-size:1.8rem; font-weight:bold; color:#fff; text-shadow:1px 1px 3px rgba(0,0,0,0.5);}
+    nav ul { display:flex; list-style:none; gap:25px; }
+    nav ul li a { color:#fff; font-weight:500; transition:all 0.3s ease; position:relative; }
+    nav ul li a::after { content:""; position:absolute; width:0; height:2px; bottom:-4px; left:0; background:#007bff; transition:0.3s; }
+    nav ul li a:hover::after, nav ul li a.active::after { width:100%; }
+    nav ul li a:hover { color:#007bff; }
+
+    /* ========== HERO ========== */
+    .hero { position:relative; height:40vh; display:flex; align-items:center; justify-content:center; text-align:center; background: linear-gradient(135deg,#ffffff,#d0f0ff);}
+    .hero h1 { font-size:3rem; color:#007bff; text-shadow:2px 2px 6px rgba(0,0,0,0.2);}
+    .hero p { font-size:1.2rem; color:#000; margin-top:15px;}
+
+    /* ========== PRICING CARDS ========== */
+    .pricing-section { padding:80px 0; background: linear-gradient(135deg,#f0faff,#ffffff);}
+    .pricing-section h2 { text-align:center; font-size:2.8rem; color:#000; margin-bottom:60px;}
+    .pricing-grid { display:flex; justify-content:center; gap:30px; flex-wrap:wrap; }
+    .pricing-card {
+      background: linear-gradient(135deg,#ffffff,#d0f0ff);
+      border-radius:12px;
+      padding:30px;
+      width:280px;
+      text-align:center;
+      box-shadow:0 8px 25px rgba(0,0,0,0.2);
+      transition:all 0.4s ease;
+    }
+    .pricing-card:hover { transform:translateY(-12px); box-shadow:0 16px 40px rgba(0,0,0,0.25);}
+    .pricing-card h3 { font-size:1.6rem; color:#007bff; margin-bottom:15px; }
+    .price { font-size:2.5rem; font-weight:bold; color:#000; margin-bottom:15px;}
+    .pricing-card ul { list-style:none; padding:0; margin-bottom:20px; }
+    .pricing-card ul li { margin-bottom:10px; font-size:1rem; color:#000; }
+
+    /* ========== FOOTER ========== */
+    footer { background: linear-gradient(90deg,#000,#001a33); color:#fff; text-align:center; padding:25px 0; font-size:0.9rem; box-shadow:0 -6px 15px rgba(0,0,0,0.3);}
+    footer a { color:#00d4ff; }
+
+    /* ========== MEDIA ========== */
+    @media screen and (max-width:992px){
+      .hero h1 { font-size:2.2rem; }
+      .hero p { font-size:1rem; }
+      .pricing-grid { flex-direction:column; align-items:center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="container">
+      <div class="brand">SiteCrafter</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="prices.html" class="active">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div>
+      <h1>Our Pricing Plans</h1>
+      <p>Choose the package that fits your needs. Premium websites made for your brand at a price you’ll love.</p>
+    </div>
+  </section>
+
+  <!-- ===== PRICING CARDS ===== -->
+  <section class="pricing-section">
+    <h2>Pricing Options</h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Basic Plan</h3>
+        <div class="price">R500</div>
+        <ul>
+          <li>Custom Web Design</li>
+          <li>Responsive Layout</li>
+          <li>1 Page Website</li>
+          <li>Basic SEO Setup</li>
+        </ul>
+      </div>
+      <div class="pricing-card">
+        <h3>Standard Plan</h3>
+        <div class="price">R800</div>
+        <ul>
+          <li>Custom Web Design</li>
+          <li>Responsive Layout</li>
+          <li>Up to 3 Pages</li>
+          <li>SEO Optimization</li>
+          <li>Google Business Profile Setup</li>
+        </ul>
+      </div>
+      <div class="pricing-card">
+        <h3>Premium Plan</h3>
+        <div class="price">R1200</div>
+        <ul>
+          <li>Custom Web Design</li>
+          <li>Responsive Layout</li>
+          <li>5+ Pages</li>
+          <li>Advanced SEO Optimization</li>
+          <li>Google Business Profile & Review Setup</li>
+          <li>Ongoing Support & Maintenance</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    &copy; <span id="year"></span> SiteCrafter. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

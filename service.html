@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SiteCrafter — Our Services</title>
+  <meta name="description" content="Explore SiteCrafter's premium services including web design, SEO, Google Business Profile management, and more. Elevate your brand with us.">
+  <style>
+    /* ========== RESET ========== */
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Arial',sans-serif;}
+    html { scroll-behavior: smooth;}
+    body { background:#fff; color:#000; line-height:1.6; overflow-x:hidden;}
+    a { text-decoration:none;}
+
+    /* ========== HEADER ========== */
+    header {
+      width:100%;
+      background: linear-gradient(90deg,#000,#001a33);
+      color:#fff;
+      position:sticky;
+      top:0;
+      z-index:999;
+      box-shadow:0 6px 15px rgba(0,0,0,0.3);
+    }
+    .container { width:90%; max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding:15px 0;}
+    .brand { font-size:1.8rem; font-weight:bold; color:#fff; text-shadow:1px 1px 3px rgba(0,0,0,0.5);}
+    nav ul { display:flex; list-style:none; gap:25px; }
+    nav ul li a { color:#fff; font-weight:500; transition:all 0.3s ease; position:relative; }
+    nav ul li a::after { content:""; position:absolute; width:0; height:2px; bottom:-4px; left:0; background:#007bff; transition:0.3s; }
+    nav ul li a:hover::after, nav ul li a.active::after { width:100%; }
+    nav ul li a:hover { color:#007bff; }
+
+    /* ========== HERO ========== */
+    .hero { position:relative; height:50vh; display:flex; align-items:center; justify-content:center; text-align:center; background: linear-gradient(135deg,#ffffff,#d0f0ff);}
+    .hero h1 { font-size:3rem; color:#007bff; text-shadow:2px 2px 6px rgba(0,0,0,0.2);}
+    .hero p { font-size:1.2rem; color:#000; margin-top:15px;}
+
+    /* ========== SERVICES SECTION ========== */
+    .services-section { padding:80px 0; background: linear-gradient(135deg,#ffffff,#e0f7ff);}
+    .services-section h2 { text-align:center; font-size:2.8rem; color:#000; margin-bottom:60px;}
+    .services-grid { display:flex; justify-content:center; gap:30px; flex-wrap:wrap;}
+    .service-card {
+      background:linear-gradient(135deg,#f8f8f8,#d6edff);
+      padding:30px;
+      border-radius:12px;
+      width:300px;
+      text-align:center;
+      transition:all 0.4s ease;
+      box-shadow:0 8px 25px rgba(0,0,0,0.2);
+    }
+    .service-card:hover { transform:translateY(-12px); box-shadow:0 16px 40px rgba(0,0,0,0.3);}
+    .service-card img { width:80px; height:80px; border-radius:50%; margin-bottom:20px; object-fit:cover;}
+    .service-card h3 { color:#007bff; margin-bottom:15px; }
+    .service-card p { color:#000; font-size:1rem; }
+
+    /* ========== FOOTER ========== */
+    footer { background: linear-gradient(90deg,#000,#001a33); color:#fff; text-align:center; padding:25px 0; font-size:0.9rem; box-shadow:0 -6px 15px rgba(0,0,0,0.3);}
+    footer a { color:#00d4ff; }
+
+    /* ========== MEDIA ========== */
+    @media screen and (max-width:992px){
+      .hero h1 { font-size:2.2rem; }
+      .hero p { font-size:1rem; }
+      .services-grid { flex-direction:column; align-items:center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="container">
+      <div class="brand">SiteCrafter</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="service.html" class="active">Services</a></li>
+		  <li><a href="prices.html">Prices</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div>
+      <h1>Our Premium Services</h1>
+      <p>From web design to SEO and Google Business Profiles — we craft solutions that elevate your brand.</p>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES CARDS ===== -->
+  <section class="services-section">
+    <h2>What We Offer</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="service-webdesign.jpg" alt="Web Design">
+        <h3>Web Design</h3>
+        <p>Responsive, modern websites tailored to your brand identity. Clean layouts, UX-focused designs, and optimized for conversions.</p>
+      </div>
+      <div class="service-card">
+        <img src="service-seo.jpg" alt="SEO Services">
+        <h3>SEO Optimization</h3>
+        <p>Comprehensive SEO solutions including on-page optimization, keyword research, technical SEO, and performance improvements to rank higher in Google.</p>
+      </div>
+      <div class="service-card">
+        <img src="service-gbp.jpg" alt="Google Business Profile">
+        <h3>Google Business Profile</h3>
+        <p>Optimize your local presence with a complete Google Business Profile, attract nearby clients, showcase reviews, and grow your visibility.</p>
+      </div>
+      <div class="service-card">
+        <img src="service-maintenance.jpg" alt="Website Maintenance">
+        <h3>Website Maintenance</h3>
+        <p>Keep your website up-to-date, secure, and performing at its best. Regular updates, bug fixes, and enhancements included.</p>
+      </div>
+      <div class="service-card">
+        <img src="service-branding.jpg" alt="Branding">
+        <h3>Branding & Strategy</h3>
+        <p>We provide visual identity, branding guidelines, and digital strategy consulting to ensure your website and online presence align perfectly with your business goals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    &copy; <span id="year"></span> SiteCrafter. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

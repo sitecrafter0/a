@@ -3,70 +3,147 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us - SiteCrafter</title>
-  <link rel="stylesheet" href="style.css">
+  <title>SiteCrafter — Contact Us</title>
+  <meta name="description" content="Get in touch with SiteCrafter. Contact us for premium web design services via form, email, phone, or WhatsApp.">
+  <style>
+    /* ========== RESET ========== */
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Arial',sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { background:#f0f8ff; color:#000; line-height:1.6; overflow-x:hidden; }
+
+    a { text-decoration:none; }
+
+    /* ========== HEADER ========== */
+    header {
+      width:100%;
+      background: linear-gradient(90deg,#000,#001a33);
+      color:#fff;
+      position:sticky;
+      top:0;
+      z-index:999;
+      box-shadow:0 6px 15px rgba(0,0,0,0.3);
+    }
+    .container { width:90%; max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding:15px 0; }
+    .brand { font-size:1.8rem; font-weight:bold; color:#fff; text-shadow:1px 1px 3px rgba(0,0,0,0.5);}
+    nav ul { display:flex; list-style:none; gap:25px; }
+    nav ul li a { color:#fff; font-weight:500; transition:all 0.3s ease; position:relative; }
+    nav ul li a::after { content:""; position:absolute; width:0; height:2px; bottom:-4px; left:0; background:#007bff; transition:0.3s; }
+    nav ul li a:hover::after, nav ul li a.active::after { width:100%; }
+    nav ul li a:hover { color:#007bff; }
+
+    /* ========== HERO ========== */
+    .hero { position:relative; height:40vh; display:flex; align-items:center; justify-content:center; text-align:center; background: linear-gradient(135deg,#ffffff,#d0f0ff);}
+    .hero h1 { font-size:3rem; color:#007bff; text-shadow:2px 2px 6px rgba(0,0,0,0.2); opacity:0; transform:translateY(30px); transition:all 1s ease; }
+    .hero p { font-size:1.3rem; color:#000; margin-top:15px; opacity:0; transform:translateY(30px); transition:all 1s ease 0.3s; }
+
+    /* ========== CONTACT BUTTONS ========== */
+    .contact-buttons { display:flex; justify-content:center; gap:25px; margin:50px 0; flex-wrap:wrap; opacity:0; transform:translateY(30px); transition:all 1s ease; }
+    .contact-btn {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 28px;
+      border-radius:8px;
+      font-weight:bold;
+      color:#fff;
+      transition:all 0.3s ease;
+      text-decoration:none;
+      box-shadow:0 8px 25px rgba(0,0,0,0.2);
+    }
+    .contact-btn:hover { transform:translateY(-6px); box-shadow:0 12px 30px rgba(0,0,0,0.35);}
+    .contact-whatsapp { background: #25D366; }
+    .contact-phone { background: #007bff; }
+    .contact-email { background: #00aaff; }
+
+    /* ========== CONTACT FORM ========== */
+    .contact-section { padding:80px 20px; max-width:800px; margin:0 auto; background: linear-gradient(135deg,#f0faff,#ffffff); border-radius:12px; box-shadow:0 8px 25px rgba(0,0,0,0.2); opacity:0; transform:translateY(30px); transition:all 1s ease; }
+    .contact-section h2 { text-align:center; font-size:2.5rem; margin-bottom:40px; color:#007bff; }
+    form { display:flex; flex-direction:column; gap:20px; }
+    input, textarea { padding:15px; border-radius:8px; border:1px solid #007bff; font-size:1rem; width:100%; }
+    input:focus, textarea:focus { outline:none; border-color:#00aaff; box-shadow:0 0 8px rgba(0,170,255,0.4);}
+    textarea { resize:vertical; min-height:120px; }
+    .btn-submit { background: linear-gradient(135deg,#007bff,#00d4ff); color:#fff; padding:14px 28px; border:none; border-radius:8px; font-weight:bold; cursor:pointer; transition:all 0.3s ease; }
+    .btn-submit:hover { transform:translateY(-6px); box-shadow:0 12px 30px rgba(0,0,0,0.35); }
+
+    /* ========== FOOTER ========== */
+    footer { background: linear-gradient(90deg,#000,#001a33); color:#fff; text-align:center; padding:25px 0; font-size:0.9rem; box-shadow:0 -6px 15px rgba(0,0,0,0.3);}
+    footer a { color:#00d4ff; }
+
+    @media screen and (max-width:992px){
+      .hero h1 { font-size:2.2rem; }
+      .hero p { font-size:1.1rem; }
+      .contact-buttons { flex-direction:column; gap:15px; }
+    }
+  </style>
 </head>
 <body>
 
   <!-- ===== HEADER ===== -->
-  <header class="site-header">
-    <div class="container header-inner">
+  <header>
+    <div class="container">
       <div class="brand">SiteCrafter</div>
-      <nav class="main-nav" id="mainNav">
+      <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-		  <li><a href="faq.html">FAQ</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="prices.html">Pricing</a></li>
           <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
       </nav>
-      <div class="nav-toggle" id="navToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
     </div>
   </header>
 
-  <!-- ===== HERO / CURTAIN ===== -->
-  <section class="hero curtain-section">
-    <div class="curtain" id="curtain"></div>
-    <div class="container curtain-content" style="text-align:center;">
-      <h1 class="hero-title">Get in Touch</h1>
-      <p class="hero-lead">We’d love to hear from you — let’s craft something amazing together.</p>
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div>
+      <h1>Contact Us</h1>
+      <p>We’re here to help you build the perfect website. Reach out today!</p>
     </div>
   </section>
 
-  <!-- ===== CONTACT INFO & FORM ===== -->
-  <section class="curtain-section">
-    <div class="container curtain-content">
-      <h2 class="section-title">Contact Us</h2>
-      <p class="section-lead">Reach out to us directly via phone, WhatsApp, email, or send us a message below.</p>
+  <!-- ===== CONTACT BUTTONS ===== -->
+  <div class="contact-buttons">
+    <a href="https://wa.me/27636704430" target="_blank" class="contact-btn contact-whatsapp">📱 WhatsApp</a>
+    <a href="tel:+27636704430" class="contact-btn contact-phone">📞 Phone</a>
+    <a href="mailto:info.sitecrafter@gmail.com" class="contact-btn contact-email">✉ Email</a>
+  </div>
 
-      <!-- ===== CONTACT METHODS ===== -->
-      <div class="contact-info" style="margin-bottom:40px; display:flex; flex-wrap:wrap; gap:20px;">
-        <a href="tel:+27636704430" class="btn btn-outline" style="flex:1; min-width:200px; text-align:center;">📞 Call Us: 063 670 4430</a>
-        <a href="https://wa.me/27636704430" target="_blank" class="btn btn-outline" style="flex:1; min-width:200px; text-align:center;">💬 WhatsApp</a>
-        <a href="mailto:dstercorreia@gmail.com" class="btn btn-outline" style="flex:1; min-width:200px; text-align:center;">✉️ Email: dstercorreia@gmail.com</a>
-      </div>
-
-      <!-- ===== CONTACT FORM ===== -->
-      <form id="contactForm" class="contact-form" style="max-width:600px; margin:0 auto; background:#111; border:2px solid #e63946; padding:30px; border-radius:12px; box-shadow:0 0 20px rgba(230,57,70,0.5);">
-        <input type="text" name="name" placeholder="Your Name" required style="margin-bottom:15px;">
-        <input type="email" name="email" placeholder="Your Email" required style="margin-bottom:15px;">
-        <textarea name="message" rows="6" placeholder="Your Message" required style="margin-bottom:15px;"></textarea>
-        <button type="submit" class="btn btn-primary" style="width:100%;">Send Message</button>
-      </form>
-    </div>
+  <!-- ===== CONTACT FORM ===== -->
+  <section class="contact-section">
+    <h2>Send Us a Message</h2>
+    <form action="#" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="subject" placeholder="Subject" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn-submit">Send Message</button>
+    </form>
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="site-footer">
-    <p>&copy; <span id="year"></span> SiteCrafter. All rights reserved.</p>
+  <footer>
+    &copy; <span id="year"></span> SiteCrafter. All rights reserved.
   </footer>
 
-  <!-- ===== MAIN JS ===== -->
-  <script src="main.js"></script>
+  <!-- ===== JS ANIMATIONS ===== -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Fade-in animations
+    const faders = document.querySelectorAll('.hero h1, .hero p, .contact-buttons, .contact-section');
+    const appearOptions = { threshold:0.3, rootMargin:"0px 0px -50px 0px" };
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
+
 </body>
 </html>
