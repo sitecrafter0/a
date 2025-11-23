@@ -6,6 +6,7 @@
 <title>SiteCrafter — Luxury Websites Built for Your Brand</title>
 <meta name="description" content="SiteCrafter builds fast, secure, and stunning custom websites that elevate your brand and leave a lasting impression.">
 <style>
+<style>
 /* ================== RESET ================== */
 * {
   margin:0; 
@@ -167,7 +168,7 @@ nav ul li a:hover { color:#007bff; }
 
 /* ================== MINI SERVICES ================== */
 .mini-services { 
-  padding:80px 0; 
+  padding:80px 20px; 
   display:flex; 
   justify-content:center; 
   gap:30px; 
@@ -198,85 +199,80 @@ nav ul li a:hover { color:#007bff; }
 .mini-card h4 { color:#000; margin-bottom:15px; }
 .mini-card p { font-size:1rem; color:#000; }
 
-/* ================== EXPERIENCE ================== */
-.experience { 
-  padding:120px 0; 
-  text-align:center; 
-  background: linear-gradient(135deg,#ffffff,#e0f7ff); 
-}
-.experience h2 { font-size:2.8rem; color:#000; margin-bottom:20px; opacity:0; transform:translateY(30px); transition:all 1s ease; }
-.experience-desc { font-size:1.1rem; color:#000; margin-bottom:50px; opacity:0; transform:translateY(30px); transition:all 1s ease 0.3s; }
-.experience-counters { display:flex; justify-content:center; gap:60px; flex-wrap:wrap; opacity:0; transform:translateY(30px); transition:all 1s ease 0.6s; }
-.counter { font-size:3rem; color:#00aaff; font-weight:bold; margin-bottom:10px; text-shadow:0 2px 6px rgba(0,0,0,0.3);}
-.counter-label { color:#000; font-weight:500; font-size:1rem; }
-
 /* ================== WHY CHOOSE US ================== */
 .why-choose { 
-  padding:100px 0; 
+  padding:80px 20px; 
   text-align:center; 
   background: linear-gradient(135deg,#ffffff,#cce6ff); 
 }
-.why-choose h2 { font-size:2.8rem; color:#000; margin-bottom:20px; opacity:0; transform:translateY(30px); transition:all 1s ease; }
-.why-choose-desc { font-size:1.1rem; color:#000; margin-bottom:40px; opacity:0; transform:translateY(30px); transition:all 1s ease 0.3s; }
-.why-grid { display:flex; justify-content:center; gap:30px; flex-wrap:wrap; }
+.why-choose h2 { font-size:2.4rem; margin-bottom:20px; opacity:0; transform:translateY(30px); transition:all 1s ease; }
+.why-choose-desc { font-size:1rem; margin-bottom:40px; opacity:0; transform:translateY(30px); transition:all 1s ease 0.3s; }
+.why-grid { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
 .why-card { 
   background:#f8f8f8; 
-  padding:30px; 
+  padding:20px; 
   border-radius:12px; 
-  width:270px; 
-  position:relative; 
+  width:260px; 
   transition:all 0.4s ease; 
   opacity:0; 
   transform:translateY(30px); 
   overflow:hidden; 
 }
-.why-card:hover { transform:translateY(-14px); box-shadow:0 16px 45px rgba(0,0,0,0.25); }
-.why-card h4 { color:#000; margin-bottom:15px; }
-.why-card p { color:#000; font-size:1rem; }
-.why-card img { width:80px; height:80px; border-radius:50%; margin-bottom:15px; object-fit:cover; }
+.why-card:hover { transform:translateY(-12px); box-shadow:0 12px 35px rgba(0,0,0,0.25); }
+.why-card img { width:70px; height:70px; border-radius:50%; margin-bottom:12px; object-fit:cover; }
+.why-card h4 { margin-bottom:10px; font-size:1.1rem; }
+.why-card p { font-size:0.95rem; }
 
 /* ================== OUR VALUES ================== */
 .values { 
-  padding:100px 0; 
+  padding:80px 20px; 
   text-align:center; 
   background: linear-gradient(135deg,#ffffff,#cce6ff); 
 }
-.values h2 { font-size:2.8rem; color:#000; margin-bottom:20px; opacity:0; transform:translateY(30px); transition:all 1s ease; }
-.values-grid { display:flex; justify-content:center; gap:30px; flex-wrap:wrap; }
+.values h2 { font-size:2.4rem; margin-bottom:20px; opacity:0; transform:translateY(30px); transition:all 1s ease; }
+.values-grid { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
 .value-card { 
   background:linear-gradient(135deg,#e6f2ff,#ffffff); 
-  padding:30px; 
+  padding:20px; 
   border-radius:12px; 
   width:240px; 
-  position:relative; 
   transition:all 0.4s ease; 
   opacity:0; 
   transform:translateY(30px); 
   overflow:hidden;
 }
-.value-card:hover { transform:translateY(-14px); box-shadow:0 16px 40px rgba(0,0,0,0.25); }
-.value-card h4 { color:#000; margin-bottom:15px; }
-.value-card p { color:#000; font-size:1rem; }
-.value-card img { width:80px; height:80px; border-radius:50%; margin-bottom:15px; object-fit:cover; }
+.value-card:hover { transform:translateY(-12px); box-shadow:0 12px 35px rgba(0,0,0,0.25); }
+.value-card img { width:70px; height:70px; border-radius:50%; margin-bottom:12px; object-fit:cover; }
+.value-card h4 { margin-bottom:10px; font-size:1.1rem; }
+.value-card p { font-size:0.95rem; }
 
 /* ================== FOOTER ================== */
 footer { 
   background: linear-gradient(90deg,#000,#001a33); 
   color:#fff; 
   text-align:center; 
-  padding:25px 0; 
+  padding:20px 0; 
   font-size:0.9rem; 
-  box-shadow:0 -6px 15px rgba(0,0,0,0.3);
 }
 footer a { color:#00d4ff; }
 
-/* ================== MEDIA ================== */
-@media screen and (max-width:992px){
-  .hero-title { font-size:2.4rem; }
-  .hero-lead { font-size:1.1rem; }
+/* ================== MOBILE MEDIA QUERIES ================== */
+@media screen and (max-width:768px){
+  .container { flex-direction:column; gap:15px; }
+  nav ul { flex-direction:column; gap:12px; align-items:center; }
+  .hero-title { font-size:2rem; }
+  .hero-lead { font-size:1rem; }
   .hero-cta { flex-direction:column; gap:12px; }
-  .mini-services, .experience-counters, .why-grid, .values-grid { flex-direction:column; align-items:center; }
+  .mini-services, .why-grid, .values-grid { flex-direction:column; align-items:center; gap:20px; }
+  .mini-card, .why-card, .value-card { width:90%; max-width:320px; padding:20px; }
 }
+@media screen and (max-width:480px){
+  .hero-title { font-size:1.6rem; }
+  .hero-lead { font-size:0.95rem; }
+  .btn { padding:12px 24px; font-size:0.9rem; }
+}
+</style>
+
 
 </style>
 </head>
