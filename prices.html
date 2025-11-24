@@ -1,318 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SiteCrafter — Pricing</title>
-  <meta name="description" content="SiteCrafter pricing plans. Choose from our 500, 800, or 1200 Rand packages, each packed with premium web design services and perks.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SiteCrafter — Pricing</title>
+<meta name="description" content="SiteCrafter pricing plans. Choose from our 500, 800, or 1200 Rand packages, each packed with premium web design services and perks.">
 
-  <style>
-    /* ========== RESET ========== */
-    * { margin:0; padding:0; box-sizing:border-box; font-family:'Arial',sans-serif; }
-    html { scroll-behavior:smooth; }
-    body { background:#fff; color:#000; overflow-x:hidden; line-height:1.6; }
-    a { text-decoration:none; }
+<style>
+/* ================== RESET ================== */
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Arial',sans-serif; }
+html { scroll-behavior: smooth; }
+body { background:#fff; color:#000; line-height:1.6; overflow-x:hidden; }
+a { text-decoration:none; }
 
-    /* ========== HEADER ========== */
-    header {
-      width:100%;
-      background:linear-gradient(90deg,#000,#001a33);
-      color:#fff;
-      position:sticky;
-      top:0;
-      z-index:999;
-      box-shadow:0 6px 15px rgba(0,0,0,0.4);
-    }
-    .container {
-      width:90%;
-      max-width:1200px;
-      margin:0 auto;
-      padding:15px 0;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-    .brand {
-      font-size:1.8rem;
-      color:#fff;
-      font-weight:bold;
-      text-shadow:1px 1px 4px rgba(0,0,0,0.4);
-    }
+/* ================== HEADER ================== */
+header {
+  width:100%;
+  background: linear-gradient(90deg,#000,#001a33);
+  color:#fff;
+  position:sticky;
+  top:0;
+  z-index:999;
+  box-shadow:0 6px 15px rgba(0,0,0,0.3);
+}
+.container {
+  width:90%;
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 0;
+}
+.brand { font-size:1.8rem; font-weight:bold; color:#fff; text-shadow:1px 1px 3px rgba(0,0,0,0.5); }
 
-    /* NAV */
-    nav ul {
-      list-style:none;
-      display:flex;
-      gap:25px;
-    }
-    nav ul li a {
-      color:#fff;
-      font-weight:500;
-      position:relative;
-      transition:0.3s;
-    }
-    nav ul li a::after {
-      content:"";
-      position:absolute;
-      left:0;
-      bottom:-4px;
-      width:0;
-      height:2px;
-      background:#00aaff;
-      transition:0.3s;
-    }
-    nav ul li a:hover::after,
-    nav ul li a.active::after { width:100%; }
-    nav ul li a:hover { color:#00aaff; }
+/* Hamburger Button */
+.hamburger {
+  display:none;
+  flex-direction: column;
+  cursor:pointer;
+  gap:5px;
+}
+.hamburger span {
+  display:block;
+  width:25px;
+  height:3px;
+  background:#fff;
+  border-radius:3px;
+  transition:all 0.3s ease;
+}
 
-    /* HAMBURGER */
-    .hamburger {
-      display:none;
-      flex-direction:column;
-      gap:6px;
-      cursor:pointer;
-    }
-    .hamburger span {
-      width:28px;
-      height:3px;
-      background:#fff;
-      border-radius:4px;
-      transition:0.3s;
-    }
+/* ================== NAV ================== */
+nav ul { display:flex; list-style:none; gap:25px; }
+nav ul li a {
+  color:#fff;
+  font-weight:500;
+  transition:all 0.3s ease;
+  position:relative;
+}
+nav ul li a::after {
+  content:"";
+  position:absolute;
+  width:0;
+  height:2px;
+  bottom:-4px;
+  left:0;
+  background:#007bff;
+  transition:0.3s;
+}
+nav ul li a:hover::after,
+nav ul li a.active::after { width:100%; }
+nav ul li a:hover { color:#007bff; }
 
-    /* MOBILE MENU */
-    @media(max-width:850px){
-      nav ul {
-        position:fixed;
-        right:-100%;
-        top:70px;
-        width:70%;
-        height:100vh;
-        flex-direction:column;
-        gap:30px;
-        padding-top:40px;
-        background:#000d1a;
-        box-shadow:-10px 0 25px rgba(0,0,0,0.5);
-        transition:0.4s ease;
-      }
-      nav ul.open { right:0; }
-      .hamburger { display:flex; }
-    }
+/* MOBILE NAV */
+@media screen and (max-width:768px){
+  .hamburger { display:flex; }
+  nav { position:absolute; top:70px; left:0; width:100%; background: linear-gradient(90deg,#000,#001a33); max-height:0; overflow:hidden; transition:max-height 0.3s ease; }
+  nav.show { max-height:400px; }
+  nav ul { flex-direction:column; gap:15px; padding:15px 0; align-items:center; }
+}
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+.hamburger.active span:nth-child(2) { opacity:0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px,-6px); }
 
-    /* ========== HERO ========== */
-    .hero {
-      height:40vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      background:linear-gradient(135deg,#e8f7ff,#ffffff);
-      padding:20px;
-    }
-    .hero h1 {
-      font-size:3rem;
-      color:#007bff;
-      text-shadow:1px 1px 4px rgba(0,0,0,0.2);
-    }
-    .hero p {
-      margin-top:10px;
-      font-size:1.2rem;
-      max-width:700px;
-      margin-left:auto;
-      margin-right:auto;
-    }
+/* ================== HERO ================== */
+.hero {
+  height:40vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:linear-gradient(135deg,#e8f7ff,#ffffff);
+  padding:20px;
+}
+.hero h1 {
+  font-size:3rem;
+  color:#007bff;
+  text-shadow:1px 1px 4px rgba(0,0,0,0.2);
+}
+.hero p {
+  margin-top:10px;
+  font-size:1.2rem;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
 
-    /* ========== PRICING SECTION ========== */
-    .pricing-section {
-      padding:80px 0;
-      background:linear-gradient(135deg,#ffffff,#eefaff);
-    }
-    .pricing-section h2 {
-      text-align:center;
-      font-size:2.8rem;
-      margin-bottom:60px;
-      color:#000;
-    }
+/* ================== PRICING SECTION ================== */
+.pricing-section {
+  padding:80px 0;
+  background:linear-gradient(135deg,#ffffff,#eefaff);
+}
+.pricing-section h2 {
+  text-align:center;
+  font-size:2.8rem;
+  margin-bottom:60px;
+  color:#000;
+}
 
-    .pricing-grid {
-      display:flex;
-      justify-content:center;
-      flex-wrap:wrap;
-      gap:30px;
-    }
+.pricing-grid {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:30px;
+}
 
-    .pricing-card {
-      width:300px;
-      padding:30px;
-      background:linear-gradient(135deg,#ffffff,#d8efff);
-      border-radius:15px;
-      text-align:center;
-      box-shadow:0 8px 25px rgba(0,0,0,0.15);
-      transition:0.4s ease;
-      border:1px solid rgba(0,0,0,0.08);
-    }
-    .pricing-card:hover {
-      transform:translateY(-12px);
-      box-shadow:0 18px 45px rgba(0,0,0,0.25);
-    }
+.pricing-card {
+  width:300px;
+  padding:30px;
+  background:linear-gradient(135deg,#ffffff,#d8efff);
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 8px 25px rgba(0,0,0,0.15);
+  transition:0.4s ease;
+  border:1px solid rgba(0,0,0,0.08);
+}
+.pricing-card:hover {
+  transform:translateY(-12px);
+  box-shadow:0 18px 45px rgba(0,0,0,0.25);
+}
 
-    .pricing-card h3 {
-      font-size:1.6rem;
-      margin-bottom:10px;
-      color:#0066cc;
-    }
-    .price {
-      font-size:2.7rem;
-      font-weight:bold;
-      color:#000;
-      margin-bottom:20px;
-    }
+.pricing-card h3 {
+  font-size:1.6rem;
+  margin-bottom:10px;
+  color:#0066cc;
+}
+.price {
+  font-size:2.7rem;
+  font-weight:bold;
+  color:#000;
+  margin-bottom:20px;
+}
 
-    .pricing-card ul {
-      list-style:none;
-      margin-bottom:20px;
-      text-align:left;
-      padding-left:5px;
-    }
-    .pricing-card ul li {
-      margin-bottom:10px;
-      font-size:1rem;
-      color:#000;
-      position:relative;
-      padding-left:18px;
-    }
-    .pricing-card ul li::before {
-      content:"✔";
-      position:absolute;
-      left:0;
-      top:0;
-      color:#007bff;
-      font-size:1rem;
-    }
+.pricing-card ul {
+  list-style:none;
+  margin-bottom:20px;
+  text-align:left;
+  padding-left:5px;
+}
+.pricing-card ul li {
+  margin-bottom:10px;
+  font-size:1rem;
+  color:#000;
+  position:relative;
+  padding-left:18px;
+}
+.pricing-card ul li::before {
+  content:"✔";
+  position:absolute;
+  left:0;
+  top:0;
+  color:#007bff;
+  font-size:1rem;
+}
 
-    .tag {
-      display:inline-block;
-      background:#007bff;
-      color:#fff;
-      padding:5px 12px;
-      border-radius:20px;
-      margin-bottom:15px;
-      font-size:0.85rem;
-      box-shadow:0 4px 10px rgba(0,0,0,0.2);
-    }
+.tag {
+  display:inline-block;
+  background:#007bff;
+  color:#fff;
+  padding:5px 12px;
+  border-radius:20px;
+  margin-bottom:15px;
+  font-size:0.85rem;
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
 
-    /* ========== FOOTER ========== */
-    footer {
-      background:linear-gradient(90deg,#000,#001a33);
-      color:#fff;
-      text-align:center;
-      padding:25px 0;
-      font-size:0.9rem;
-    }
-
-  </style>
+/* ================== FOOTER ================== */
+footer {
+  background: linear-gradient(90deg,#000,#001a33);
+  color:#fff;
+  text-align:center;
+  padding:25px 0;
+  font-size:0.9rem;
+}
+</style>
 </head>
+
 <body>
 
-  <!-- ===== HEADER ===== -->
-  <header>
-    <div class="container">
+<header>
+  <div class="container">
+    <div class="brand">SiteCrafter</div>
 
-      <div class="brand">SiteCrafter</div>
-
-      <div class="hamburger" id="hamburger">
-        <span></span><span></span><span></span>
-      </div>
-
-      <nav>
-        <ul id="mobileMenu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="service.html">Services</a></li>
-          <li><a href="prices.html" class="active">Pricing</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
     </div>
-  </header>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero">
-    <div>
-      <h1>Our Pricing Plans</h1>
-      <p>Affordable, powerful, and fully optimized websites — built to grow your business.</p>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="prices.html" class="active">Pricing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Our Pricing Plans</h1>
+    <p>Affordable, powerful, and fully optimized websites — built to grow your business.</p>
+  </div>
+</section>
+
+<section class="pricing-section">
+  <h2>Pricing Options</h2>
+
+  <div class="pricing-grid">
+
+    <div class="pricing-card">
+      <span class="tag">Starter Package</span>
+      <h3>Basic Plan</h3>
+      <div class="price">R500</div>
+      <ul>
+        <li>1 Page Website</li>
+        <li>Mobile Responsive</li>
+        <li>Clean Modern Design</li>
+        <li>Basic SEO Setup</li>
+        <li>Contact Form Included</li>
+        <li>Lightning Fast Hosting</li>
+      </ul>
     </div>
-  </section>
 
-  <!-- ===== PRICING SECTION ===== -->
-  <section class="pricing-section">
-    <h2>Pricing Options</h2>
-
-    <div class="pricing-grid">
-
-      <!-- BASIC -->
-      <div class="pricing-card">
-        <span class="tag">Starter Package</span>
-        <h3>Basic Plan</h3>
-        <div class="price">R500</div>
-        <ul>
-          <li>1 Page Website</li>
-          <li>Mobile Responsive</li>
-          <li>Clean Modern Design</li>
-          <li>Basic SEO Setup</li>
-          <li>Contact Form Included</li>
-          <li>Lightning Fast Hosting</li>
-        </ul>
-      </div>
-
-      <!-- STANDARD -->
-      <div class="pricing-card">
-        <span class="tag">Most Popular</span>
-        <h3>Standard Plan</h3>
-        <div class="price">R800</div>
-        <ul>
-          <li>Up to 3 Custom Pages</li>
-          <li>Full Responsive Design</li>
-          <li>SEO Optimization</li>
-          <li>Google Business Profile Setup</li>
-          <li>Speed Performance Boost</li>
-          <li>Social Media Integration</li>
-        </ul>
-      </div>
-
-      <!-- PREMIUM -->
-      <div class="pricing-card">
-        <span class="tag">Best Value</span>
-        <h3>Premium Plan</h3>
-        <div class="price">R1200</div>
-        <ul>
-          <li>5+ Custom Pages</li>
-          <li>Advanced SEO Optimization</li>
-          <li>Google Reviews Optimization</li>
-          <li>High-Performance Speed Setup</li>
-          <li>Maintenance & Support</li>
-          <li>Branding & Strategy Guidance</li>
-        </ul>
-      </div>
-
+    <div class="pricing-card">
+      <span class="tag">Most Popular</span>
+      <h3>Standard Plan</h3>
+      <div class="price">R800</div>
+      <ul>
+        <li>Up to 3 Custom Pages</li>
+        <li>Full Responsive Design</li>
+        <li>SEO Optimization</li>
+        <li>Google Business Profile Setup</li>
+        <li>Speed Performance Boost</li>
+        <li>Social Media Integration</li>
+      </ul>
     </div>
-  </section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    &copy; <span id="year"></span> SiteCrafter. All rights reserved.
-  </footer>
+    <div class="pricing-card">
+      <span class="tag">Best Value</span>
+      <h3>Premium Plan</h3>
+      <div class="price">R1200</div>
+      <ul>
+        <li>5+ Custom Pages</li>
+        <li>Advanced SEO Optimization</li>
+        <li>Google Reviews Optimization</li>
+        <li>High-Performance Speed Setup</li>
+        <li>Maintenance & Support</li>
+        <li>Branding & Strategy Guidance</li>
+      </ul>
+    </div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+  </div>
+</section>
 
-    const hamburger = document.getElementById("hamburger");
-    const mobileMenu = document.getElementById("mobileMenu");
+<footer>
+  &copy; <span id="year"></span> SiteCrafter. All rights reserved.
+</footer>
 
-    hamburger.addEventListener("click", () => {
-      mobileMenu.classList.toggle("open");
-    });
-  </script>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Hamburger toggle
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('show');
+});
+</script>
 
 </body>
 </html>
