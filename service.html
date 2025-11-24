@@ -12,93 +12,110 @@
     body { background:#fff; color:#000; line-height:1.6; overflow-x:hidden;}
     a { text-decoration:none;}
 
-    /* ========== HEADER ========== */
-    header {
-      width:100%;
-      background:linear-gradient(90deg,#000,#001a33);
-      color:#fff;
-      position:sticky;
-      top:0;
-      z-index:999;
-      box-shadow:0 6px 15px rgba(0,0,0,0.3);
-    }
-    .container { 
-      width:90%; 
-      max-width:1200px; 
-      margin:0 auto; 
-      display:flex; 
-      justify-content:space-between; 
-      align-items:center; 
-      padding:15px 0;
-    }
-    .brand { 
-      font-size:1.8rem; 
-      font-weight:bold; 
-      color:#fff; 
-      text-shadow:1px 1px 3px rgba(0,0,0,0.5);
-    }
+   /* ================== HEADER ================== */
+header {
+  width:100%;
+  background: linear-gradient(90deg,#000,#001a33);
+  color:#fff;
+  position:sticky;
+  top:0;
+  z-index:999;
+  box-shadow:0 6px 15px rgba(0,0,0,0.3);
+}
+.container {
+  width:90%;
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 0;
+}
+.brand { 
+  font-size:1.8rem; 
+  font-weight:bold; 
+  color:#fff; 
+  text-shadow:1px 1px 3px rgba(0,0,0,0.5); 
+}
 
-    /* NAVIGATION */
-    nav ul { 
-      display:flex; 
-      list-style:none; 
-      gap:25px; 
-    }
-    nav ul li a { 
-      color:#fff; 
-      font-weight:500; 
-      transition:all 0.3s ease; 
-      position:relative; 
-    }
-    nav ul li a::after { 
-      content:""; 
-      position:absolute; 
-      width:0; 
-      height:2px; 
-      bottom:-4px; 
-      left:0; 
-      background:#007bff; 
-      transition:0.3s; 
-    }
-    nav ul li a:hover::after, 
-    nav ul li a.active::after { width:100%; }
-    nav ul li a:hover { color:#00aaff; }
+/* ================== NAV ================== */
+nav ul { 
+  display:flex; 
+  list-style:none; 
+  gap:25px; 
+}
+nav ul li a {
+  color:#fff;
+  font-weight:500;
+  transition:all 0.3s ease;
+  position:relative;
+}
+nav ul li a::after {
+  content:"";
+  position:absolute;
+  width:0;
+  height:2px;
+  bottom:-4px;
+  left:0;
+  background:#007bff;
+  transition:0.3s;
+}
+nav ul li a:hover::after,
+nav ul li a.active::after { width:100%; }
+nav ul li a:hover { color:#007bff; }
 
-    /* HAMBURGER */
-    .hamburger {
-      display:none;
-      flex-direction:column;
-      cursor:pointer;
-      gap:6px;
-    }
-    .hamburger span {
-      width:28px;
-      height:3px;
-      background:#fff;
-      border-radius:5px;
-      transition:0.3s;
-    }
+/* ================== HAMBURGER ================== */
+.hamburger {
+  display:none;
+  flex-direction: column;
+  cursor:pointer;
+  gap:5px;
+}
+.hamburger span {
+  display:block;
+  width:25px;
+  height:3px;
+  background:#fff;
+  border-radius:3px;
+  transition:all 0.3s ease;
+}
 
-    /* MOBILE MENU */
-    @media(max-width:850px){
-      nav ul {
-        position:fixed;
-        top:70px;
-        right:-100%;
-        width:70%;
-        height:100vh;
-        background:#000c1a;
-        flex-direction:column;
-        gap:30px;
-        padding-top:40px;
-        transition:0.4s ease;
-        box-shadow:-10px 0 20px rgba(0,0,0,0.5);
-      }
-      nav ul.open {
-        right:0;
-      }
-      .hamburger { display:flex; }
-    }
+/* Hamburger animation */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px,5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity:0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px,-6px);
+}
+
+/* ================== MOBILE NAV ================== */
+@media screen and (max-width:768px){
+  .hamburger { display:flex; }
+
+  nav {
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background: linear-gradient(90deg,#000,#001a33);
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.3s ease;
+  }
+
+  nav.show { max-height:400px; }
+
+  nav ul {
+    flex-direction:column;
+    gap:15px;
+    padding:15px 0;
+    align-items:center;
+  }
+}
+
 
     /* ========== HERO ========== */
     .hero {
@@ -179,28 +196,28 @@
 </head>
 <body>
 
-  <!-- ===== HEADER ===== -->
-  <header>
-    <div class="container">
-      <div class="brand">SiteCrafter</div>
+ <header>
+  <div class="container">
+    <div class="brand">SiteCrafter</div>
 
-      <!-- Hamburger -->
-      <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <nav>
-        <ul id="mobileMenu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="service.html" class="active">Services</a></li>
-          <li><a href="prices.html">Prices</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+    <!-- Hamburger -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-  </header>
+
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="service.html" class="active">Services</a></li>
+        <li><a href="prices.html">Prices</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
 
   <!-- ===== HERO ===== -->
   <section class="hero">
@@ -253,18 +270,16 @@
     &copy; <span id="year"></span> SiteCrafter. All rights reserved.
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+ <script>
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
 
-    // ========== MOBILE NAV TOGGLE ==========
-    const hamburger = document.getElementById("hamburger");
-    const mobileMenu = document.getElementById("mobileMenu");
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('show');
+});
+</script>
 
-    hamburger.addEventListener("click", () => {
-      mobileMenu.classList.toggle("open");
-      hamburger.classList.toggle("active");
-    });
-  </script>
 
 </body>
 </html>
