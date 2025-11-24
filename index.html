@@ -83,24 +83,67 @@ nav ul li a:hover { color:#007bff; }
 .hero p { font-size:1.3rem; color:#fff; text-shadow:1px 1px 5px rgba(0,0,0,0.5); margin-bottom:30px; }
 .hero-cta { display:flex; gap:15px; flex-wrap:wrap; justify-content:center; }
 
-/* ================== MINI SERVICES ================== */
-.mini-services { padding:80px 0; display:flex; justify-content:center; gap:30px; flex-wrap:wrap; background: linear-gradient(135deg,#ffffff,#e0f7ff);}
-.mini-card { background:linear-gradient(135deg,#f8f8f8,#d6edff); padding:30px; border-radius:12px; width:270px; text-align:center; transition:all 0.4s ease; box-shadow:0 8px 25px rgba(0,0,0,0.2);}
-.mini-card:hover { transform:translateY(-12px); box-shadow:0 16px 40px rgba(0,0,0,0.3);}
-.mini-card-icon { font-size:2.5rem; margin-bottom:15px; background: linear-gradient(45deg,#007bff,#0056b3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.mini-card h4 { color:#007bff; margin-bottom:15px; }
-.mini-card p { font-size:1rem; color:#000; }
+/* ================== MINI SERVICES — Updated to match Why Choose Us ================== */
+.mini-services {
+  padding:100px 0; /* same as why-choose */
+  text-align:center; /* center like why-choose */
+  background: linear-gradient(135deg,#ffffff,#d0f0ff); /* same background */
+}
 
-/* ================== WHY CHOOSE US ================== */
-.why-choose { padding:100px 0; text-align:center; background: linear-gradient(135deg,#ffffff,#d0f0ff); }
-.why-choose h2 { font-size:2.8rem; margin-bottom:20px; color:#007bff; }
-.why-choose p { font-size:1.1rem; margin-bottom:40px; color:#000; }
-.why-grid { display:flex; justify-content:center; gap:30px; flex-wrap:wrap; }
-.why-card { background:linear-gradient(135deg,#f8f8f8,#d6edff); padding:30px; border-radius:12px; width:270px; text-align:center; box-shadow:0 8px 25px rgba(0,0,0,0.2); }
-.why-card:hover { transform:translateY(-12px); box-shadow:0 16px 40px rgba(0,0,0,0.3); }
-.why-card img { width:80px; height:80px; border-radius:50%; margin-bottom:15px; object-fit:cover; }
-.why-card h4 { color:#007bff; margin-bottom:10px; }
-.why-card p { color:#000; font-size:1rem; }
+.mini-services h2 {
+  font-size:2.8rem; /* same as why-choose */
+  margin-bottom:20px;
+  color:#007bff;
+}
+
+.mini-services p {
+  font-size:1.1rem; /* same as why-choose */
+  margin-bottom:40px;
+  color:#000;
+}
+
+.mini-grid { /* same as why-grid */
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+.mini-card { /* same as why-card */
+  background:linear-gradient(135deg,#f8f8f8,#d6edff);
+  padding:30px;
+  border-radius:12px;
+  width:270px;
+  text-align:center;
+  box-shadow:0 8px 25px rgba(0,0,0,0.2);
+  transition:all 0.4s ease;
+}
+
+.mini-card:hover {
+  transform:translateY(-12px);
+  box-shadow:0 16px 40px rgba(0,0,0,0.3);
+}
+
+.mini-card-icon, .mini-card img { /* icons behave like why-card images */
+  font-size:2.5rem;
+  margin-bottom:15px;
+  object-fit:cover;
+  border-radius:50%;
+  background: linear-gradient(45deg,#007bff,#0056b3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mini-card h3 { /* matches why-card h4 */
+  color:#007bff;
+  margin-bottom:10px;
+}
+
+.mini-card p { /* matches why-card p */
+  color:#000;
+  font-size:1rem;
+}
+
 
 /* ================== VALUES ================== */
 .values { padding:100px 0; text-align:center; background: linear-gradient(135deg,#ffffff,#e0f7ff); }
@@ -208,7 +251,7 @@ footer a { color:#00d4ff; }
 
 
 <section class="mini-services">
-  
+  <h2>Our Services</h2>
   <div class="mini-card">
     <div class="mini-card-icon">🌐</div>
     <h3>Web Design</h3>
