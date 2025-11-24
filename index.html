@@ -7,7 +7,7 @@
 <meta name="description" content="SiteCrafter builds fast, secure, and stunning custom websites that elevate your brand and leave a lasting impression.">
 <style>
 /* ================== RESET ================== */
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Arial', sans-serif; }
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Arial',sans-serif; }
 html { scroll-behavior: smooth; }
 body { background:#fff; color:#000; line-height:1.6; overflow-x:hidden; }
 a { text-decoration:none; }
@@ -72,80 +72,54 @@ nav ul li a.active::after { width:100%; }
 nav ul li a:hover { color:#007bff; }
 
 /* ================== HERO ================== */
-.hero { 
-  position:relative; 
-  height:95vh; 
-  display:flex; 
-  align-items:center; 
-  justify-content:center; 
-  text-align:center; 
-  overflow:hidden; 
-}
-.hero-video-wrapper { 
-  position:absolute; 
-  top:0; left:0; 
-  width:100%; height:100%; 
-  overflow:hidden; 
-  z-index:0; 
-}
-.hero-video { 
-  width:100%; height:100%; 
-  object-fit:cover; 
-  filter:brightness(0.4); 
-}
-.hero-overlay { 
-  position:absolute; 
-  top:0; left:0; 
-  width:100%; height:100%; 
-  background: rgba(0,0,0,0.35);
-  z-index:1; 
-}
-.hero-content { 
-  position:relative; 
-  z-index:2; 
-  max-width:900px; 
-  margin:0 auto; 
-  padding:0 20px; 
-  color:#fff;
-}
-.hero-title { font-size:3rem; margin-bottom:20px; text-shadow:2px 2px 8px rgba(0,0,0,0.7); }
-.hero-lead { font-size:1.3rem; margin-bottom:30px; color:#00d4ff; text-shadow:1px 1px 5px rgba(0,0,0,0.5); }
+.hero { position:relative; height:95vh; display:flex; align-items:center; justify-content:center; text-align:center; overflow:hidden; background: linear-gradient(135deg,#ffffff,#d0f0ff);}
+.hero-video-wrapper { position:absolute; top:0; left:0; width:100%; height:100%; overflow:hidden; z-index:0; }
+.hero-video { width:100%; height:100%; object-fit:cover; filter:brightness(0.35); }
+.hero-overlay { position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.35)); z-index:0; }
+.hero-content { position:relative; z-index:1; max-width:900px; margin:0 auto; padding:0 20px; color:#fff; }
+.hero h1 { font-size:3rem; color:#007bff; text-shadow:2px 2px 8px rgba(0,0,0,0.7); margin-bottom:20px; }
+.hero p { font-size:1.3rem; color:#fff; text-shadow:1px 1px 5px rgba(0,0,0,0.5); margin-bottom:30px; }
 .hero-cta { display:flex; gap:15px; flex-wrap:wrap; justify-content:center; }
-.btn { padding:14px 36px; border-radius:8px; font-weight:bold; display:inline-block; box-shadow:0 8px 25px rgba(0,0,0,0.3); transition:all 0.3s ease; }
-.btn-primary { background: linear-gradient(135deg,#007bff,#00d4ff); color:#fff; }
-.btn-primary:hover { transform:scale(1.05); }
-.btn-outline { background:#fff; border:2px solid #007bff; color:#007bff; }
-.btn-outline:hover { background:#007bff; color:#fff; }
 
 /* ================== MINI SERVICES ================== */
-.mini-services { padding:80px 0; display:flex; justify-content:center; gap:30px; flex-wrap:wrap; background:#e0f7ff; }
-.mini-card { background:#f8f8f8; padding:30px; border-radius:12px; width:270px; text-align:center; transition:all 0.4s ease; }
-.mini-card:hover { transform:translateY(-12px); box-shadow:0 16px 40px rgba(0,0,0,0.25); }
-.mini-card-icon { font-size:2.5rem; margin-bottom:15px; background: linear-gradient(45deg,#007bff,#00d4ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.mini-card h4 { color:#000; margin-bottom:15px; }
+.mini-services { padding:80px 0; display:flex; justify-content:center; gap:30px; flex-wrap:wrap; background: linear-gradient(135deg,#ffffff,#e0f7ff);}
+.mini-card { background:linear-gradient(135deg,#f8f8f8,#d6edff); padding:30px; border-radius:12px; width:270px; text-align:center; transition:all 0.4s ease; box-shadow:0 8px 25px rgba(0,0,0,0.2);}
+.mini-card:hover { transform:translateY(-12px); box-shadow:0 16px 40px rgba(0,0,0,0.3);}
+.mini-card-icon { font-size:2.5rem; margin-bottom:15px; background: linear-gradient(45deg,#007bff,#0056b3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.mini-card h4 { color:#007bff; margin-bottom:15px; }
 .mini-card p { font-size:1rem; color:#000; }
 
 /* ================== WHY CHOOSE US ================== */
-.why-choose { padding:100px 0; text-align:center; background:#cce6ff; }
-.why-choose h2 { font-size:2.8rem; margin-bottom:20px; }
-.why-choose p { font-size:1.1rem; margin-bottom:40px; }
+.why-choose { padding:100px 0; text-align:center; background: linear-gradient(135deg,#ffffff,#d0f0ff); }
+.why-choose h2 { font-size:2.8rem; margin-bottom:20px; color:#007bff; }
+.why-choose p { font-size:1.1rem; margin-bottom:40px; color:#000; }
 .why-grid { display:flex; justify-content:center; gap:30px; flex-wrap:wrap; }
-.why-card { background:#f8f8f8; padding:30px; border-radius:12px; width:270px; text-align:center; }
+.why-card { background:linear-gradient(135deg,#f8f8f8,#d6edff); padding:30px; border-radius:12px; width:270px; text-align:center; box-shadow:0 8px 25px rgba(0,0,0,0.2); }
+.why-card:hover { transform:translateY(-12px); box-shadow:0 16px 40px rgba(0,0,0,0.3); }
 .why-card img { width:80px; height:80px; border-radius:50%; margin-bottom:15px; object-fit:cover; }
-.why-card h4 { margin-bottom:10px; }
-.why-card p { font-size:1rem; }
+.why-card h4 { color:#007bff; margin-bottom:10px; }
+.why-card p { color:#000; font-size:1rem; }
 
 /* ================== VALUES ================== */
-.values { padding:100px 0; text-align:center; background:#cce6ff; }
-.values h2 { font-size:2.8rem; margin-bottom:20px; }
+.values { padding:100px 0; text-align:center; background: linear-gradient(135deg,#ffffff,#e0f7ff); }
+.values h2 { font-size:2.8rem; margin-bottom:20px; color:#007bff; }
 .values-grid { display:flex; justify-content:center; gap:30px; flex-wrap:wrap; }
-.value-card { background:#e6f2ff; padding:30px; border-radius:12px; width:240px; text-align:center; }
+.value-card { background:linear-gradient(135deg,#f8f8f8,#d6edff); padding:30px; border-radius:12px; width:240px; text-align:center; box-shadow:0 8px 25px rgba(0,0,0,0.2); }
+.value-card:hover { transform:translateY(-12px); box-shadow:0 16px 40px rgba(0,0,0,0.3); }
 .value-card img { width:80px; height:80px; border-radius:50%; margin-bottom:15px; object-fit:cover; }
-.value-card h4 { margin-bottom:10px; }
-.value-card p { font-size:1rem; }
+.value-card h4 { color:#007bff; margin-bottom:10px; }
+.value-card p { color:#000; font-size:1rem; }
+
+/* ================== BUTTONS ================== */
+.btn { padding:14px 36px; border-radius:10px; font-weight:bold; display:inline-block; box-shadow:0 8px 25px rgba(0,0,0,0.2); transition:all 0.3s ease; }
+.btn-primary { background: linear-gradient(135deg,#007bff,#0056b3); color:#fff; }
+.btn-primary:hover { transform:scale(1.05); background: linear-gradient(135deg,#0056b3,#003366); }
+.btn-outline { background:#fff; border:2px solid #007bff; color:#007bff; }
+.btn-outline:hover { background:#007bff; color:#fff; }
 
 /* ================== FOOTER ================== */
-footer { background: linear-gradient(90deg,#000,#001a33); color:#fff; text-align:center; padding:25px 0; font-size:0.9rem; }
+footer { background: linear-gradient(90deg,#000,#001a33); color:#fff; text-align:center; padding:25px 0; font-size:0.9rem; box-shadow:0 -6px 15px rgba(0,0,0,0.3); }
+footer a { color:#00d4ff; }
 
 /* ================== MOBILE ================== */
 @media screen and (max-width:768px){
@@ -153,9 +127,8 @@ footer { background: linear-gradient(90deg,#000,#001a33); color:#fff; text-align
   nav { position:absolute; top:70px; left:0; width:100%; background: linear-gradient(90deg,#000,#001a33); max-height:0; overflow:hidden; transition:max-height 0.3s ease; }
   nav.show { max-height:400px; }
   nav ul { flex-direction:column; gap:15px; padding:15px 0; align-items:center; }
-  .hero-title { font-size:2.4rem; }
-  .hero-lead { font-size:1.1rem; }
-  .hero-cta { flex-direction:column; gap:12px; }
+  .hero h1 { font-size:2.2rem; }
+  .hero p { font-size:1rem; }
   .mini-services, .why-grid, .values-grid { flex-direction:column; align-items:center; }
 }
 .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
@@ -190,8 +163,8 @@ footer { background: linear-gradient(90deg,#000,#001a33); color:#fff; text-align
     <div class="hero-overlay"></div>
   </div>
   <div class="hero-content">
-    <h1 class="hero-title">Luxury Websites Built for Your Brand</h1>
-    <p class="hero-lead">Fast, secure, visually stunning websites designed to impress and convert clients.</p>
+    <h1>Luxury Websites Built for Your Brand</h1>
+    <p>Fast, secure, visually stunning websites designed to impress and convert clients.</p>
     <div class="hero-cta">
       <a href="service.html" class="btn btn-primary">Our Services</a>
       <a href="contact.html" class="btn btn-outline">Contact Us</a>
@@ -199,47 +172,47 @@ footer { background: linear-gradient(90deg,#000,#001a33); color:#fff; text-align
   </div>
 </section>
 
-<section class="mini-services" id="mini-services">
+<section class="mini-services">
   <div class="mini-card">
     <div class="mini-card-icon">🌐</div>
     <h4>Web Design</h4>
-    <p>Responsive, modern websites tailored to your brand.</p>
+    <p>Responsive, modern websites tailored to your brand identity.</p>
   </div>
   <div class="mini-card">
     <div class="mini-card-icon">⚡</div>
-    <h4>SEO</h4>
-    <p>On-page, performance, and backlink strategies to drive traffic.</p>
+    <h4>SEO Optimization</h4>
+    <p>Boost traffic and rankings with on-page, technical, and backlink strategies.</p>
   </div>
   <div class="mini-card">
     <div class="mini-card-icon">📍</div>
     <h4>Google Business Profile</h4>
-    <p>Optimize local listings, reviews, and professional photos.</p>
+    <p>Optimize local visibility with complete profiles and reviews.</p>
   </div>
 </section>
 
-<section class="why-choose" id="why-choose">
+<section class="why-choose">
   <h2>Why Choose Us</h2>
-  <p>Creativity, technology, and strategy come together. We prioritize aesthetics, functionality, and ROI to deliver websites that truly shine.</p>
+  <p>We prioritize aesthetics, functionality, and ROI to deliver websites that truly shine.</p>
   <div class="why-grid">
     <div class="why-card">
       <img src="pexels-goumbik-574070.jpg" alt="Custom Designs">
       <h4>Custom Designs</h4>
-      <p>Every project is unique, focused on brand identity, UX, and high conversion potential.</p>
+      <p>Unique projects tailored to brand identity and UX for high conversion.</p>
     </div>
     <div class="why-card">
       <img src="pexels-divinetechygirl-1181244.jpg" alt="Fast & Secure">
       <h4>Fast & Secure</h4>
-      <p>Lightning-fast loading, top-tier security, seamless performance across devices.</p>
+      <p>Lightning-fast loading, top-tier security, seamless performance.</p>
     </div>
     <div class="why-card">
       <img src="pexels-goumbik-574071.jpg" alt="Ongoing Support">
       <h4>Ongoing Support</h4>
-      <p>Continuous guidance and updates post-launch to keep your website flawless.</p>
+      <p>Continuous updates and guidance post-launch to keep your website flawless.</p>
     </div>
   </div>
 </section>
 
-<section class="values" id="values">
+<section class="values">
   <h2>Our Values</h2>
   <div class="values-grid">
     <div class="value-card">
@@ -270,7 +243,6 @@ footer { background: linear-gradient(90deg,#000,#001a33); color:#fff; text-align
 </footer>
 
 <script>
-// Year
 document.getElementById('year').textContent = new Date().getFullYear();
 
 // Hamburger toggle
