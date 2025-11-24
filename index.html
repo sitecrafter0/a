@@ -118,29 +118,34 @@ nav ul li a:hover { color:#007bff; }
   display:inline-block; 
   box-shadow:0 8px 25px rgba(0,0,0,0.2); 
   transition:all 0.3s ease; 
+  font-size:1rem;
+  text-align:center;
+  cursor:pointer;
 }
 
 /* Primary Button */
 .btn-primary { 
   background: linear-gradient(135deg,#007bff,#0056b3); 
-  color:#fff; 
+  color:#ffffff; 
+  border:2px solid #0056b3;
 }
 .btn-primary:hover { 
   transform:scale(1.05); 
   background: linear-gradient(135deg,#0056b3,#003366); 
+  border-color:#003366;
+  color:#ffffff;
 }
 
-/* Outline Button — FIXED FOR ACCESSIBILITY */
+/* Outline Button — Accessible Version */
 .btn-outline { 
-  background:#007bff; /* filled blue for high contrast */
-  border:2px solid #007bff; 
-  color:#ffffff; /* white text ensures readability */
-  transition:all 0.3s ease;
+  background:#ffffff; /* white background */
+  border:2px solid #002147; /* very dark blue for high contrast */
+  color:#002147; /* very dark blue text */
 }
 .btn-outline:hover { 
-  background:#0056b3; 
-  border-color:#0056b3;
-  color:#ffffff;
+  background:#002147; /* dark blue fill on hover */
+  border-color:#002147;
+  color:#ffffff; /* white text on hover */
 }
 
 
