@@ -111,11 +111,38 @@ nav ul li a:hover { color:#007bff; }
 .value-card p { color:#000; font-size:1rem; }
 
 /* ================== BUTTONS ================== */
-.btn { padding:14px 36px; border-radius:10px; font-weight:bold; display:inline-block; box-shadow:0 8px 25px rgba(0,0,0,0.2); transition:all 0.3s ease; }
-.btn-primary { background: linear-gradient(135deg,#007bff,#0056b3); color:#fff; }
-.btn-primary:hover { transform:scale(1.05); background: linear-gradient(135deg,#0056b3,#003366); }
-.btn-outline { background:#fff; border:2px solid #007bff; color:#007bff; }
-.btn-outline:hover { background:#007bff; color:#fff; }
+.btn { 
+  padding:14px 36px; 
+  border-radius:10px; 
+  font-weight:bold; 
+  display:inline-block; 
+  box-shadow:0 8px 25px rgba(0,0,0,0.2); 
+  transition:all 0.3s ease; 
+}
+
+/* Primary Button */
+.btn-primary { 
+  background: linear-gradient(135deg,#007bff,#0056b3); 
+  color:#fff; 
+}
+.btn-primary:hover { 
+  transform:scale(1.05); 
+  background: linear-gradient(135deg,#0056b3,#003366); 
+}
+
+/* Outline Button — FIXED FOR ACCESSIBILITY */
+.btn-outline { 
+  background:#007bff; /* filled blue for high contrast */
+  border:2px solid #007bff; 
+  color:#ffffff; /* white text ensures readability */
+  transition:all 0.3s ease;
+}
+.btn-outline:hover { 
+  background:#0056b3; 
+  border-color:#0056b3;
+  color:#ffffff;
+}
+
 
 /* ================== FOOTER ================== */
 footer { background: linear-gradient(90deg,#000,#001a33); color:#fff; text-align:center; padding:25px 0; font-size:0.9rem; box-shadow:0 -6px 15px rgba(0,0,0,0.3); }
